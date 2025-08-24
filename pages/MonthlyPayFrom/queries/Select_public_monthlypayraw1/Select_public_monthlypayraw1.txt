@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  public.monthlypayraw
+ORDER BY
+  "{{inputMonthlyPaytbl.sortOrder.column || 'transid'}}" {{inputMonthlyPaytbl.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{inputMonthlyPaytbl.pageSize}}
+OFFSET
+  {{inputMonthlyPaytbl.pageOffset}}

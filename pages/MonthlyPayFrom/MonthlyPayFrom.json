@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_56945f8a-6cbd-4cf9-b875-3e03f2926fc5",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_670a6ff1-749d-4fe3-8d91-57678bf7c7c1",
   "unpublishedPage": {
+    "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 5000,
+          "bottomRow": 410,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
-          "dynamicTriggerPathList": [],
           "leftColumn": 0,
-          "minHeight": 1292,
+          "minHeight": 520,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
-          "rightColumn": 4896,
+          "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 124,
+          "snapRows": 50,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Page1",
-    "slug": "page1"
+    "name": "MonthlyPayFrom",
+    "slug": "monthlypayfrom"
   }
 }

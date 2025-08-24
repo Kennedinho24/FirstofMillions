@@ -1,0 +1,63 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 37,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{ !inpUsername.text || !inpPassword.text || getUser.isLoading }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "8ek4fb2yxq",
+  "leftColumn": 22,
+  "minWidth": 120,
+  "mobileBottomRow": 34,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 30,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    // Basic validation\n    if (!inpUsername.text.trim() || !inpPassword.text) {\n      showAlert('Please enter both username and password', 'warning');\n      return;\n    }\n\n    // Run the query\n    await getUsers.run();\n\n    // Read the rows from getUser.data\n    const rows = getUsers.data;\n\n    if (!rows || rows.length === 0) {\n      showAlert('Invalid username or password', 'error');\n      return;\n    }\n\n    const row = rows[0];\n    const ok = row.passwordtbl === inpPassword.text;\n\n    if (ok) {\n      await storeValue('user', { username: row.usernametbl, loggedInAt: Date.now() });\n      showAlert('Login successful!', 'success');\n      navigateTo('Home'); // Change 'Home' if needed\n    } else {\n      showAlert('Invalid username or password', 'error');\n    }\n  })()\n}}",
+  "originalBottomRow": 34,
+  "originalTopRow": 30,
+  "parentColumnSpace": 10.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 38,
+  "text": "Log in",
+  "topRow": 33,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "6fwmu6pa2w",
+  "widgetName": "Button1btnLogin"
+}

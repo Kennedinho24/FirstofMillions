@@ -1,0 +1,2 @@
+
+SELECT StaffID, StaffName FROM public.StaffList;

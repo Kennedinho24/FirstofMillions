@@ -1,0 +1,5 @@
+
+SELECT usernametbl, passwordtbl
+FROM dbuserstbl
+WHERE usernametbl = {{ inpUsername.text.trim() }}
+LIMIT 1;
