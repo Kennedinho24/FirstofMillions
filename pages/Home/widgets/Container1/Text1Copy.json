@@ -1,48 +1,55 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 9,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
     },
     {
+      "key": "fontFamily"
+    },
+    {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "fontFamily": "Nunito Sans",
-  "fontSize": "0.875rem",
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
   "key": "dzy58e9naa",
-  "leftColumn": 48,
-  "maxDynamicHeight": 9,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 11,
-  "mobileLeftColumn": 49,
-  "mobileRightColumn": 64,
-  "mobileTopRow": 7,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "originalBottomRow": 9,
+  "originalTopRow": 2,
   "overflow": "NONE",
   "parentColumnSpace": 10.25,
-  "parentId": "0",
+  "parentId": "5oq6tx0l63",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
-  "shouldScrollContents": true,
+  "rightColumn": 61,
   "shouldTruncate": false,
-  "text": "Aga Khan Foundation Tanzania",
-  "textAlign": "RIGHT",
-  "textColor": "#22c55e",
-  "topRow": 7,
+  "text": "\n{{ \"Hello, \" + appsmith.store.user.username }}\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 2,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ksfz9cf0gw",
-  "widgetName": "Text2"
+  "widgetId": "v4p5k7fk9i",
+  "widgetName": "Text1Copy"
 }

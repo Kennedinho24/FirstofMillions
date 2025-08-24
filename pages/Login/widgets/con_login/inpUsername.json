@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 31,
+  "bottomRow": 36,
   "boxShadow": "none",
   "defaultText": "",
   "dynamicBindingPathList": [
@@ -15,53 +15,42 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "onSubmit"
-    }
-  ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onSubmit"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "PASSWORD",
+  "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
   "key": "uz0j3mwb0x",
-  "label": "Enter Password",
+  "label": "Enter username",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 22,
+  "leftColumn": 28,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 26,
+  "mobileBottomRow": 17,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 8,
-  "mobileTopRow": 19,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onSubmit": "\n{{ btnLogin.onClick() }}",
-  "originalBottomRow": 26,
-  "originalTopRow": 19,
+  "originalBottomRow": 36,
+  "originalTopRow": 30,
   "parentColumnSpace": 10.25,
-  "parentId": "0",
+  "parentId": "gz5hh2e0wb",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 42,
-  "shouldAllowAutofill": true,
+  "rightColumn": 47,
   "showStepArrows": false,
-  "topRow": 24,
+  "topRow": 30,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "26jsc1ltck",
-  "widgetName": "inpPassword"
+  "widgetId": "31ai1gvm9z",
+  "widgetName": "inpUsername"
 }
