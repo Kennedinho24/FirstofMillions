@@ -1,6 +1,6 @@
 {
   "gitSyncId": "68a9a2053af45e71b9b9fcff_f2d88eff-1786-4027-8c72-0588367d3b2f",
-  "id": "MonthlyPayFrom_Update_public_monthlypayraw1",
+  "id": "MonthlyPayForm_Update_public_monthlypayraw1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "name": "Update_public_monthlypayraw1",
-    "pageId": "MonthlyPayFrom",
+    "pageId": "MonthlyPayForm",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }

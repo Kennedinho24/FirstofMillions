@@ -1,6 +1,6 @@
 {
   "gitSyncId": "68a9a2053af45e71b9b9fcff_a30aeca5-f2d3-46fb-aa6f-739715d5ceda",
-  "id": "MonthlyPayFrom_Select_public_monthlypayraw1",
+  "id": "MonthlyPayForm_Select_public_monthlypayraw1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -28,7 +28,7 @@
       }
     ],
     "name": "Select_public_monthlypayraw1",
-    "pageId": "MonthlyPayFrom",
+    "pageId": "MonthlyPayForm",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }

@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_dd59eee8-f7d7-4616-8019-3acf54d8e7fb",
-  "id": "MonthlyPayFrom_Total_record_public_monthlypayraw1",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_5c022e9e-520d-40f1-8e78-17843b9355b8",
+  "id": "MonthlyPayForm_getStaffList",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) from public.monthlypayraw;",
+      "body": "\nSELECT StaffID, StaffName FROM public.StaffList;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -22,13 +22,9 @@
       "name": "MonthlyPayAppNEON",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "Total_record_public_monthlypayraw1",
-    "pageId": "MonthlyPayFrom",
+    "dynamicBindingPathList": [],
+    "name": "getStaffList",
+    "pageId": "MonthlyPayForm",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
