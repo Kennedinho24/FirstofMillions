@@ -38,7 +38,7 @@
   "shouldTruncate": false,
   "text": "Aga Khan Foundation Tanzania",
   "textAlign": "RIGHT",
-  "textColor": "#22c55e",
+  "textColor": "#15803d",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

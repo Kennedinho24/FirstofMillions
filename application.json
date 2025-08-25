@@ -1,7 +1,7 @@
 {
   "appIsExample": false,
   "appLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "applicationDetail": {
     "appPositioning": {
@@ -45,10 +45,14 @@
     {
       "id": "MonthlyPayForm",
       "isDefault": false
+    },
+    {
+      "id": "ApprovalFlowForm",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
-    "type": "FLUID"
+    "type": "DESKTOP"
   },
   "unpublishedApplicationDetail": {
     "appPositioning": {

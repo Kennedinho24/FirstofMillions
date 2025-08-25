@@ -1,0 +1,4 @@
+
+SELECT "DateMonth", "basicsalary"
+FROM monthlypayraw
+ORDER BY "DateMonth";
