@@ -1,0 +1,65 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "buttonVariant": "SECONDARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton2": {
+      "buttonColor": "#7f1d1d",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "power",
+      "id": "groupButton2",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Log-out",
+      "menuItems": {},
+      "onClick": "{{navigateTo('Login', {}, 'SAME_WINDOW');}}",
+      "placement": "CENTER",
+      "widgetId": ""
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "serhnxe9b9",
+  "leftColumn": 58,
+  "minWidth": 450,
+  "mobileBottomRow": 44,
+  "mobileLeftColumn": 17,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
+  "parentColumnSpace": 17.9375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 10,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "wv405ch6zq",
+  "widgetName": "ButtonGroup1"
+}

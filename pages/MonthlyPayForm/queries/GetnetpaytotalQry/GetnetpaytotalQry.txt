@@ -1,0 +1,3 @@
+SELECT SUM(mpt."netpay") AS total_net_pay
+FROM monthlypayraw mpt
+WHERE mpt."DateMonth" = '{{ filterDatePicker.selectedDate }}';

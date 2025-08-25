@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 43,
+  "bottomRow": 78,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -49,13 +49,19 @@
     "customColumn3",
     "customColumn1",
     "customColumn4",
-    "customColumn5"
+    "customColumn5",
+    "grosssalary",
+    "nssf",
+    "paye",
+    "totaldeductions",
+    "netpay"
   ],
-  "columnUpdatedAt": 1755987367171,
+  "columnUpdatedAt": 1756135687796,
   "columnWidthMap": {
     "DateMonth": 110,
     "staffid": 100
   },
+  "compactMode": "SHORT",
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -133,6 +139,21 @@
     },
     {
       "key": "primaryColumns.staffid.selectOptions"
+    },
+    {
+      "key": "primaryColumns.grosssalary.computedValue"
+    },
+    {
+      "key": "primaryColumns.nssf.computedValue"
+    },
+    {
+      "key": "primaryColumns.paye.computedValue"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.computedValue"
+    },
+    {
+      "key": "primaryColumns.netpay.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -171,7 +192,7 @@
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
   "infiniteScrollEnabled": false,
-  "inlineEditingSaveOption": "ROW_LEVEL",
+  "inlineEditingSaveOption": "CUSTOM",
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
@@ -188,12 +209,12 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "onAddNewRowSave": "{{Insert_public_monthlypayraw1.run(() => {\n            showAlert(\"Successfully created!\");\n            Select_public_monthlypayraw1.run()\n          }, () => {\n            showAlert(\"Unable to create!\");\n          })}}",
+  "onAddNewRowSave": "\n{{ \n  storeValue(\"tempTableData\", inputMonthlyPaytbl);\n  storeValue(\"inputMonthlyPaytbl\", appsmith.store.tempTableData); // Forces refresh\n  Insert_public_monthlypayraw1.run(() => {\n    showAlert(\"Successfully created!\");\n    Select_public_monthlypayraw1.run();\n  }, () => {\n    showAlert(\"Unable to create!\");\n  });\n}}\n\n\n",
   "onPageChange": "{{\n            Select_public_monthlypayraw1.run();\n            Total_record_public_monthlypayraw1.run()\n          }}",
   "onPageSizeChange": "{{150}}",
   "onSort": "{{\n            Select_public_monthlypayraw1.run();\n            Total_record_public_monthlypayraw1.run()\n          }}",
-  "originalBottomRow": 41,
-  "originalTopRow": 14,
+  "originalBottomRow": 78,
+  "originalTopRow": 40,
   "parentColumnSpace": 10.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -231,7 +252,7 @@
       "validation": {
         "isColumnEditableCellRequired": "true"
       },
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "advancerecovery": {
@@ -262,7 +283,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "basicsalary": {
@@ -293,7 +314,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "customColumn1": {
@@ -326,7 +347,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "customColumn2": {
@@ -359,7 +380,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "customColumn3": {
@@ -392,7 +413,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "customColumn4": {
@@ -425,7 +446,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "customColumn5": {
@@ -458,7 +479,41 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
+      "width": 150
+    },
+    "grosssalary": {
+      "alias": "grosssalary",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"grosssalary\"])) : grosssalary })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "grosssalary",
+      "index": 12,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "grosssalary",
+      "notation": "standard",
+      "originalId": "grosssalary",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "helsb": {
@@ -489,7 +544,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "loandeduction": {
@@ -520,7 +575,75 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
+      "width": 150
+    },
+    "netpay": {
+      "alias": "netpay",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"netpay\"])) : netpay })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "netpay",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "netpay",
+      "notation": "standard",
+      "originalId": "netpay",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "TOP",
+      "width": 150
+    },
+    "nssf": {
+      "alias": "nssf",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"nssf\"])) : nssf })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "nssf",
+      "index": 13,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "nssf",
+      "notation": "standard",
+      "originalId": "nssf",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "otherbenefits": {
@@ -551,7 +674,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "otherdeductions": {
@@ -582,7 +705,41 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
+      "width": 150
+    },
+    "paye": {
+      "alias": "paye",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"paye\"])) : paye })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "paye",
+      "index": 14,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "paye",
+      "notation": "standard",
+      "originalId": "paye",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "salaryadvance": {
@@ -613,7 +770,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "socialdeduction": {
@@ -621,7 +778,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  (() => {\n    const basic = Number(currentRow.basicsalary) || 0;\n    const benefits = Number(currentRow.otherbenefits) || 0;\n    const gross = basic + benefits;\n    const nssf = gross * 0.10;\n    return nssf.toLocaleString('en-US');\n  })()\n)) :  \n  (() => {\n    const basic = Number(currentRow.basicsalary) || 0;\n    const benefits = Number(currentRow.otherbenefits) || 0;\n    const gross = basic + benefits;\n    const nssf = gross * 0.10;\n    return nssf.toLocaleString('en-US');\n  })()\n })()}}",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  (() => {\n    return Number(currentRow.socialdeduction || 0).toLocaleString('en-US');\n  })()\n)) :  \n  (() => {\n    return Number(currentRow.socialdeduction || 0).toLocaleString('en-US');\n  })()\n })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -644,7 +801,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "staffdName": {
@@ -675,7 +832,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "staffid": {
@@ -707,7 +864,41 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
+      "width": 150
+    },
+    "totaldeductions": {
+      "alias": "totaldeductions",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = inputMonthlyPaytbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"totaldeductions\"])) : totaldeductions })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "totaldeductions",
+      "index": 15,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "totaldeductions",
+      "notation": "standard",
+      "originalId": "totaldeductions",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "TOP",
       "width": 150
     },
     "transid": {
@@ -738,7 +929,7 @@
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
-      "verticalAlignment": "CENTER",
+      "verticalAlignment": "TOP",
       "width": 150
     }
   },
@@ -750,11 +941,11 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "\n{{ \n  Select_public_monthlypayraw1.data.filter(row => \n    moment(row.DateMonth).isSame(moment(filterDatePicker.selectedDate), 'day')\n  ) \n}}\n",
   "textSize": "0.875rem",
-  "topRow": 16,
+  "topRow": 40,
   "totalRecordsCount": "{{Total_record_public_monthlypayraw1.data[0].count}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
-  "verticalAlignment": "CENTER",
+  "verticalAlignment": "TOP",
   "widgetId": "qw2jj30sz3",
   "widgetName": "inputMonthlyPaytbl"
 }

@@ -1,1 +1,25 @@
-INSERT INTO public.monthlypayraw ("staffid","staffdName","basicsalary","otherbenefits","salaryadvance","loandeduction","socialdeduction","helsb","advancerecovery","otherdeductions","DateMonth") VALUES ('{{(inputMonthlyPaytbl.newRow || {}).staffid}}','{{(inputMonthlyPaytbl.newRow || {}).staffdName}}','{{(inputMonthlyPaytbl.newRow || {}).basicsalary}}','{{(inputMonthlyPaytbl.newRow || {}).otherbenefits}}','{{(inputMonthlyPaytbl.newRow || {}).salaryadvance}}','{{(inputMonthlyPaytbl.newRow || {}).loandeduction}}','{{(inputMonthlyPaytbl.newRow || {}).socialdeduction}}','{{(inputMonthlyPaytbl.newRow || {}).helsb}}','{{(inputMonthlyPaytbl.newRow || {}).advancerecovery}}','{{(inputMonthlyPaytbl.newRow || {}).otherdeductions}}','{{(inputMonthlyPaytbl.newRow || {}).DateMonth}}')
+
+INSERT INTO public.monthlypayraw (
+  "staffid", "staffdName", "basicsalary", "otherbenefits",
+  "salaryadvance", "loandeduction", "socialdeduction", "helsb",
+  "advancerecovery", "otherdeductions", "DateMonth",
+  "grosssalary", "nssf", "paye", "totaldeductions", "netpay"
+)
+VALUES (
+  '{{(inputMonthlyPaytbl.newRow || {}).staffid}}',
+  '{{(inputMonthlyPaytbl.newRow || {}).staffdName}}',
+  {{(inputMonthlyPaytbl.newRow || {}).basicsalary || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).otherbenefits || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).salaryadvance || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).loandeduction || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).socialdeduction || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).helsb || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).advancerecovery || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).otherdeductions || 0}},
+  '{{(inputMonthlyPaytbl.newRow || {}).DateMonth || "2025-08-01"}}',
+  {{(inputMonthlyPaytbl.newRow || {}).GrossSalary || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).NSSF || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).PAYE || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).TotalDeductions || 0}},
+  {{(inputMonthlyPaytbl.newRow || {}).NETPAY || 0}}
+);

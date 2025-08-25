@@ -1,0 +1,5 @@
+
+SELECT SUM(mpt."paye") AS total_paye
+FROM monthlypaytbl mpt
+JOIN monthlypayraw mpr ON mpt.transid = mpr.transid
+WHERE mpr."DateMonth" = '{{ filterDatePicker.selectedDate }}'

@@ -1,8 +1,8 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "borderRadius": "1.5rem",
+  "bottomRow": 39,
   "boxShadow": "none",
   "closeOnSelection": true,
   "dateFormat": "DD-MM-YYYY",
@@ -11,9 +11,6 @@
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -27,6 +24,8 @@
   "label": "Payroll Month",
   "labelAlignment": "left",
   "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelTextColor": "#14532d",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
@@ -40,15 +39,17 @@
   "mobileRightColumn": 10,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "originalBottomRow": 39,
+  "originalTopRow": 32,
   "parentColumnSpace": 10.25,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 19,
+  "rightColumn": 11,
   "shortcuts": false,
   "timePrecision": "minute",
-  "topRow": 5,
+  "topRow": 32,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
   "widgetId": "7gm6n5bd47",
