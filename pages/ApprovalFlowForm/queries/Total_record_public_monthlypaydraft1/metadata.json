@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_e16ec70f-d65b-4f91-89b6-eabdbcf6e311",
-  "id": "ApprovalFlowForm_Select_public_monthlypayraw1",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_d6989bfb-c152-47c2-a4e8-2e34ce28bdb5",
+  "id": "ApprovalFlowForm_Total_record_public_monthlypaydraft1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  *\nFROM\n  public.monthlypayraw\nORDER BY\n  \"{{inputMonthlyPaytbl.sortOrder.column || 'transid'}}\" {{inputMonthlyPaytbl.sortOrder.order !== \"desc\" ? \"\" : \"DESC\"}}\nLIMIT\n  {{inputMonthlyPaytbl.pageSize}}\nOFFSET\n  {{inputMonthlyPaytbl.pageOffset}}",
+      "body": "SELECT COUNT(*) from public.monthlypaydraft;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "Select_public_monthlypayraw1",
+    "name": "Total_record_public_monthlypaydraft1",
     "pageId": "ApprovalFlowForm",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

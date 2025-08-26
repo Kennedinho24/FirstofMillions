@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#14532d",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Montserrat",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "fumqvpu5ca",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 54,
+  "mobileLeftColumn": 9,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 50,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "overflow": "NONE",
+  "parentColumnSpace": 17.9375,
+  "parentId": "5dox1q4net",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "\n{{ \n  inputMonthlyPaytbl_Upload.tableData.reduce((sum, row) => {\n    const basic = Number(row.basicsalary) || 0;\n    const benefits = Number(row.otherbenefits) || 0;\n    const gross = basic + benefits;\n    const nssf = gross * 0.10;\n    return sum + nssf;\n  }, 0).toLocaleString('en-US')\n}}\n\n\n",
+  "textAlign": "CENTER",
+  "textColor": "#eab308",
+  "topRow": 4,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "yz63lbx7jh",
+  "widgetName": "txtNetPayCopy"
+}

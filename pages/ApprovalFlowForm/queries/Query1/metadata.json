@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_e16ec70f-d65b-4f91-89b6-eabdbcf6e311",
-  "id": "ApprovalFlowForm_Select_public_monthlypayraw1",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_0fc50eb4-8fc2-40f0-8ccc-588db3dd3bd2",
+  "id": "ApprovalFlowForm_Query1",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  *\nFROM\n  public.monthlypayraw\nORDER BY\n  \"{{inputMonthlyPaytbl.sortOrder.column || 'transid'}}\" {{inputMonthlyPaytbl.sortOrder.order !== \"desc\" ? \"\" : \"DESC\"}}\nLIMIT\n  {{inputMonthlyPaytbl.pageSize}}\nOFFSET\n  {{inputMonthlyPaytbl.pageOffset}}",
+      "body": "\nSELECT * FROM public.monthlypaydraft;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -22,12 +22,8 @@
       "name": "MonthlyPayAppNEON",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "Select_public_monthlypayraw1",
+    "dynamicBindingPathList": [],
+    "name": "Query1",
     "pageId": "ApprovalFlowForm",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
