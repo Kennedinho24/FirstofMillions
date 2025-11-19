@@ -1,0 +1,9 @@
+UPDATE monthlypayraw
+SET 
+  status = 'Approved',
+  approvedby = '{{ appsmith.store.user.username }}',
+  approvedat = CURRENT_TIMESTAMP
+WHERE
+  transid IN ({{ TableCurrentM.selectedRows.map(r => r.transid).join(",") }});
+
+

@@ -1,0 +1,49 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 67,
+  "boxShadow": "none",
+  "buttonColor": "#ef4444",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "14cpavdqlw",
+  "leftColumn": 56,
+  "minWidth": 120,
+  "mobileBottomRow": 83,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 79,
+  "needsErrorInfo": false,
+  "onClick": "{{Deletestaff.run().then(() => {\n  showAlert('Record deleted successfully', 'success');\n});\ngetcurrentmonth.run().then(() => {\n  showAlert('Records refreshed successfully', 'success');\n});}}",
+  "originalBottomRow": 67,
+  "originalTopRow": 63,
+  "parentColumnSpace": 20.25,
+  "parentId": "0qztxiqwbr",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Delete from Payroll",
+  "topRow": 63,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "8ffi13m9jx",
+  "widgetName": "Button1"
+}

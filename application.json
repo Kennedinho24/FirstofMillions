@@ -1,7 +1,7 @@
 {
   "appIsExample": false,
   "appLayout": {
-    "type": "DESKTOP"
+    "type": "FLUID"
   },
   "applicationDetail": {
     "appPositioning": {
@@ -47,16 +47,20 @@
       "isDefault": false
     },
     {
-      "id": "ApprovalFlowForm",
+      "id": "MonthlyPayFormReview",
       "isDefault": false
     },
     {
-      "id": "MonthlyPayForm Copy",
+      "id": "MonthlyPayFormApproval",
+      "isDefault": false
+    },
+    {
+      "id": "MonthlyPayFormAll",
       "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
-    "type": "DESKTOP"
+    "type": "FLUID"
   },
   "unpublishedApplicationDetail": {
     "appPositioning": {

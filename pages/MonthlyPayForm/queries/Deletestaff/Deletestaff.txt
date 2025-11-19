@@ -1,0 +1,2 @@
+DELETE FROM public.monthlypayraw
+WHERE monthunique = '{{ TableCurrentM.selectedRow.monthunique }}';

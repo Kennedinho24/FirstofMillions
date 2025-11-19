@@ -1,0 +1,9 @@
+UPDATE monthlypayraw
+SET 
+  status = 'Reviewed',
+  reviewedby = '{{ appsmith.store.user.username }}',
+  reviewedat = CURRENT_TIMESTAMP
+WHERE
+  transid IN ({{ TableCurrentM.selectedRows.map(r => r.transid).join(",") }});
+
+

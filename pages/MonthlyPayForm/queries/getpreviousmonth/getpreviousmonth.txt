@@ -1,0 +1,4 @@
+SELECT 
+staffid, "staffdName", basicsalary, otherbenefits, salaryadvance, loandeduction , socialdeduction, helsb, paye_flag, nssf_flag, advancerecovery, otherdeductions, totaldeductions, nssf, paye, netpay
+FROM public."monthlypayraw"
+WHERE payrollperiod = '{{SelectPreviousM.selectedOptionValue}}'

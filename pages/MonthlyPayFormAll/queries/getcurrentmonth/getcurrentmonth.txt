@@ -1,0 +1,26 @@
+SELECT 
+  transid, staffid, "staffdName", basicsalary, otherbenefits, salaryadvance,
+  loandeduction, socialdeduction, helsb, advancerecovery, otherdeductions,
+  grosssalary, nssf, paye, totaldeductions, netpay, payrollperiod,
+  currencycode, wcf, status
+FROM public."monthlypayraw"
+WHERE 
+  (
+    {{ SelectPM.selectedOptionValue 
+        ? `payrollperiod = '${SelectPM.selectedOptionValue}'`
+        : "TRUE"
+    }}
+  )
+AND 
+  (
+    {{ SelectCurrency.selectedOptionValue
+        ? `currencycode = '${SelectCurrency.selectedOptionValue}'`
+        : "TRUE"
+    }}
+  )
+AND 
+  (
+    "staffdName" ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
+    OR staffid::text ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
+  );
+

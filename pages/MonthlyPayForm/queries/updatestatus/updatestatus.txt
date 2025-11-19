@@ -1,0 +1,9 @@
+UPDATE monthlypayraw
+SET 
+  status = 'Submitted',
+  createdby = '{{ appsmith.store.user.username }}',
+  createdat = CURRENT_TIMESTAMP
+WHERE
+  transid IN ({{ TableCurrentM.selectedRows.map(r => r.transid).join(",") }});
+
+

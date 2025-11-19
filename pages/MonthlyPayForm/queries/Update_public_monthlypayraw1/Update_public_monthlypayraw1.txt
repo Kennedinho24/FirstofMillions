@@ -1,1 +1,21 @@
-UPDATE public.monthlypayraw SET "staffid"= '{{inputMonthlyPaytbl.updatedRow.staffid}}', "staffdName"= '{{inputMonthlyPaytbl.updatedRow.staffdName}}', "basicsalary"= '{{inputMonthlyPaytbl.updatedRow.basicsalary}}', "otherbenefits"= '{{inputMonthlyPaytbl.updatedRow.otherbenefits}}', "salaryadvance"= '{{inputMonthlyPaytbl.updatedRow.salaryadvance}}', "loandeduction"= '{{inputMonthlyPaytbl.updatedRow.loandeduction}}', "socialdeduction"= '{{inputMonthlyPaytbl.updatedRow.socialdeduction}}', "helsb"= '{{inputMonthlyPaytbl.updatedRow.helsb}}', "advancerecovery"= '{{inputMonthlyPaytbl.updatedRow.advancerecovery}}', "otherdeductions"= '{{inputMonthlyPaytbl.updatedRow.otherdeductions}}', "DateMonth"= '{{inputMonthlyPaytbl.updatedRow.DateMonth}}' WHERE "transid"= {{inputMonthlyPaytbl.updatedRow.transid}};
+UPDATE monthlypayraw
+SET 
+  staffid = '{{ TableCurrentM.triggeredRow.staffid }}',
+	currencycode = '{{ TableCurrentM.triggeredRow.currencycode }}',
+	paye_flag = '{{ TableCurrentM.triggeredRow.paye_flag }}',
+	nssf_flag = '{{ TableCurrentM.triggeredRow.nssf_flag }}',
+  "staffdName" = '{{ TableCurrentM.triggeredRow.staffdName }}',
+  basicsalary = {{ Number(TableCurrentM.triggeredRow.basicsalary.replace(/,/g, '')) }},
+  otherbenefits = {{ Number(TableCurrentM.triggeredRow.otherbenefits.replace(/,/g, '')) }},
+  salaryadvance = {{ Number(TableCurrentM.triggeredRow.salaryadvance.replace(/,/g, '')) }},
+  loandeduction = {{ Number(TableCurrentM.triggeredRow.loandeduction.replace(/,/g, '')) }},
+  socialdeduction = {{ Number(TableCurrentM.triggeredRow.socialdeduction.replace(/,/g, '')) }},
+  helsb = {{ Number(TableCurrentM.triggeredRow.helsb.replace(/,/g, '')) }},
+  advancerecovery = {{ Number(TableCurrentM.triggeredRow.advancerecovery.replace(/,/g, '')) }},
+  otherdeductions = {{ Number(TableCurrentM.triggeredRow.otherdeductions.replace(/,/g, '')) }},
+  payrollperiod = '{{ TableCurrentM.triggeredRow.payrollperiod }}'
+WHERE 
+  transid = {{ TableCurrentM.triggeredRow.transid }};
+
+
+

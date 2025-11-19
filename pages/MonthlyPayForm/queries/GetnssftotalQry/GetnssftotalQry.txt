@@ -1,5 +1,0 @@
-
-SELECT SUM(mpt."nssf") AS total_nssf
-FROM monthlypaytbl mpt
-JOIN monthlypayraw mpr ON mpt.transid = mpr.transid
-WHERE mpr."DateMonth" = '{{ filterDatePicker.selectedDate }}'

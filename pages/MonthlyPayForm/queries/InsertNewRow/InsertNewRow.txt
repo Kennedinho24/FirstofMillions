@@ -1,0 +1,24 @@
+INSERT INTO public.monthlypayraw (
+  staffid, "staffdName", basicsalary, otherbenefits,
+  salaryadvance, loandeduction, socialdeduction, helsb,
+  advancerecovery, otherdeductions, payrollperiod, monthunique,
+  paye_flag, nssf_flag, currencycode
+) VALUES (
+  '{{(TableCurrentM.newRow || {}).staffid}}',
+  '{{(TableCurrentM.newRow || {}).staffdName}}',
+  {{ Number(((TableCurrentM.newRow || {}).basicsalary || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).otherbenefits || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).salaryadvance || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).loandeduction || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).socialdeduction || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).helsb || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).advancerecovery || 0).toString().replace(/,/g, '')) }},
+  {{ Number(((TableCurrentM.newRow || {}).otherdeductions || 0).toString().replace(/,/g, '')) }},
+  '{{(TableCurrentM.newRow || {}).payrollperiod}}',
+  '{{(TableCurrentM.newRow || {}).staffid}}{{(TableCurrentM.newRow || {}).payrollperiod}}',
+  '{{(TableCurrentM.newRow || {}).paye_flag || 0}}',
+  '{{(TableCurrentM.newRow || {}).nssf_flag || 0}}',
+	'{{(TableCurrentM.newRow || {}).currencycode || 0}}'
+);
+
+
