@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#14532d",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 17,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -31,8 +31,8 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 50,
   "needsErrorInfo": false,
-  "originalBottomRow": 12,
-  "originalTopRow": 8,
+  "originalBottomRow": 17,
+  "originalTopRow": 12,
   "overflow": "NONE",
   "parentColumnSpace": 17.9375,
   "parentId": "4wctlr28jk",
@@ -44,7 +44,7 @@
   "text": "USD: {{TableCurrentM.tableData\n         .filter(row => row.currencycode === 'USD')\n         .reduce((sum, row) => sum + Number(row.netpay || 0), 0).toLocaleString()\n}}",
   "textAlign": "CENTER",
   "textColor": "#eab308",
-  "topRow": 8,
+  "topRow": 12,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

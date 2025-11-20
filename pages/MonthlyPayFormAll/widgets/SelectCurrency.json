@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 16,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -53,7 +53,7 @@
   "rightColumn": 18,
   "serverSideFiltering": false,
   "sourceData": "[\n  {\n    \"name\": \"TZS\",\n    \"code\": \"TZS\"\n  },\n  {\n    \"name\": \"USD\",\n    \"code\": \"USD\"\n  }\n]",
-  "topRow": 12,
+  "topRow": 9,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "al2u85xgn4",

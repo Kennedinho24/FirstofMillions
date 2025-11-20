@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 43,
+  "bottomRow": 40,
   "boxShadow": "none",
   "defaultText": "{{TableCurrentM.selectedRow.status}}",
   "dynamicBindingPathList": [
@@ -52,7 +52,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 5,
   "showStepArrows": false,
-  "topRow": 36,
+  "topRow": 33,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "lwc2ttxap8",

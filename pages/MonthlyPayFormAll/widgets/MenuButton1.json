@@ -1,0 +1,74 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 39,
+  "boxShadow": "none",
+  "dynamicBindingPathList": [
+    {
+      "key": "menuColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
+    }
+  ],
+  "isCompact": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7st3bjrrnh",
+  "label": "Export",
+  "leftColumn": 57,
+  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+  "menuItems": {
+    "menuItem1": {
+      "backgroundColor": "#a16207",
+      "iconColor": "#eab308",
+      "id": "menuItem1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "PDF",
+      "onClick": "{{JSObject5.generatePDFasURL();\nshowAlert('PDF downloaded successfully', 'success');}}",
+      "widgetId": ""
+    },
+    "menuItem2": {
+      "backgroundColor": "#d4d4d8",
+      "iconColor": "#d4d4d8",
+      "id": "menuItem2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Excel",
+      "onClick": "{{JSObject4.generateExcelDownload();}}",
+      "widgetId": ""
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "SECONDARY",
+  "mobileBottomRow": 38,
+  "mobileLeftColumn": 26,
+  "mobileRightColumn": 42,
+  "mobileTopRow": 34,
+  "needsErrorInfo": false,
+  "originalBottomRow": 39,
+  "originalTopRow": 35,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "topRow": 35,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "gvqav69vmf",
+  "widgetName": "MenuButton1"
+}

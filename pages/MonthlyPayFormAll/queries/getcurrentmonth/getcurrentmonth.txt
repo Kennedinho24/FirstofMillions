@@ -1,26 +1,87 @@
-SELECT 
-  transid, staffid, "staffdName", basicsalary, otherbenefits, salaryadvance,
-  loandeduction, socialdeduction, helsb, advancerecovery, otherdeductions,
-  grosssalary, nssf, paye, totaldeductions, netpay, payrollperiod,
-  currencycode, wcf, status
-FROM public."monthlypayraw"
-WHERE 
-  (
-    {{ SelectPM.selectedOptionValue 
-        ? `payrollperiod = '${SelectPM.selectedOptionValue}'`
-        : "TRUE"
-    }}
-  )
-AND 
-  (
-    {{ SelectCurrency.selectedOptionValue
-        ? `currencycode = '${SelectCurrency.selectedOptionValue}'`
-        : "TRUE"
-    }}
-  )
-AND 
-  (
-    "staffdName" ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
-    OR staffid::text ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
-  );
+WITH main AS (
+  SELECT 
+    transid,
+    staffid,
+	  createdby,
+	  createdat,
+	  reviewedby,
+	  reviewedat,
+	  approvedby,
+	  approvedat,
+    "staffdName",
+    basicsalary,
+    otherbenefits,
+    salaryadvance,
+    loandeduction,
+    socialdeduction,
+    helsb,
+    advancerecovery,
+    otherdeductions,
+    grosssalary,
+    nssf,
+    paye,
+    totaldeductions,
+    netpay,
+    payrollperiod,
+    currencycode,
+    wcf,
+    status
+  FROM public."monthlypayraw"
+  WHERE 
+    (
+      {{ SelectPM.selectedOptionValue 
+          ? `payrollperiod = '${SelectPM.selectedOptionValue}'`
+          : "TRUE"
+      }}
+    )
+  AND 
+    (
+      {{ SelectCurrency.selectedOptionValue
+          ? `currencycode = '${SelectCurrency.selectedOptionValue}'`
+          : "TRUE"
+      }}
+    )
+  AND 
+    (
+      "staffdName" ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
+      OR staffid::text ILIKE '%' || '{{ InputKeyWord.text }}' || '%'
+    )
+)
+
+-- Return all original rows
+SELECT * 
+FROM main
+
+UNION ALL
+
+-- Add totals row
+SELECT
+  NULL AS transid,
+  NULL AS staffid,
+	NULL AS createdby,
+	NULL AS createdat,
+	NULL AS reviewedby,
+	NULL AS reviewedat,
+	NULL AS approvedby,
+	NULL AS approvedat,
+  'TOTALS' AS "staffdName",
+  SUM(basicsalary) AS basicsalary,
+  SUM(otherbenefits) AS otherbenefits,
+  SUM(salaryadvance) AS salaryadvance,
+  SUM(loandeduction) AS loandeduction,
+  SUM(socialdeduction) AS socialdeduction,
+  SUM(helsb) AS helsb,
+  SUM(advancerecovery) AS advancerecovery,
+  SUM(otherdeductions) AS otherdeductions,
+  SUM(grosssalary) AS grosssalary,
+  SUM(nssf) AS nssf,
+  SUM(paye) AS paye,
+  SUM(totaldeductions) AS totaldeductions,
+  SUM(netpay) AS netpay,
+  NULL AS payrollperiod,
+  NULL AS currencycode,
+  SUM(wcf) AS wcf,
+  NULL AS status
+FROM main;
+
 

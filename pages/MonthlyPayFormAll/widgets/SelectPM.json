@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 19,
+  "bottomRow": 16,
   "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -55,7 +55,7 @@
   "rightColumn": 8,
   "serverSideFiltering": false,
   "sourceData": "{{getpayrollperiods.data}}",
-  "topRow": 12,
+  "topRow": 9,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "abzz0a8swv",

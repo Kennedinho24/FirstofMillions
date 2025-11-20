@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "fs1c10wg8i",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "onClick": "{{ \n  // make Preview visible, then set the active tab to \"Preview\"\n  storeValue(\"showPreview\", true)\n    .then(() => storeValue(\"activeTab\", \"Preview\"))\n}}\n\n",
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
+  "parentColumnSpace": 9.9375,
+  "parentId": "0qztxiqwbr",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 55,
+  "text": "Preview",
+  "topRow": 25,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "iu8ojxw0of",
+  "widgetName": "Button5"
+}
