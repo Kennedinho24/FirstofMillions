@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 22,
+  "boxShadow": "none",
+  "buttonColor": "#14532d",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{!(SelectPM.selectedOptionValue && Text3.text === \"Approved\")}}\n",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "i7mu3x0i1j",
+  "leftColumn": 0,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{JSObject8.runAll();}}",
+  "parentColumnSpace": 6.6484375,
+  "parentId": "6xay8cphvo",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 26,
+  "text": "Send Salary Slips",
+  "tooltip": "Salary slips to ALL STAFF",
+  "topRow": 18,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "5dulk6twnc",
+  "widgetName": "Button3"
+}

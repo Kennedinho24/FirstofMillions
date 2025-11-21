@@ -1,0 +1,3 @@
+UPDATE monthlypayraw
+SET pdfurl = '{{this.params.pdfUrl}}'
+WHERE transid = {{this.params.id}};

@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 70,
+  "bottomRow": 53,
   "bottomRowBeforeCollapse": 69,
   "docUrl": "{{JSObject5.generatePDFasURL.data}}",
   "dynamicBindingPathList": [
@@ -22,7 +22,7 @@
   "isLoading": false,
   "isVisible": "{{RadioGroup1.selectedOptionValue === \"Staff\"}}",
   "key": "sku22kq5df",
-  "leftColumn": 34,
+  "leftColumn": 0,
   "mobileBottomRow": 40,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 23,
@@ -31,15 +31,15 @@
   "originalBottomRow": 69,
   "originalTopRow": 8,
   "parentColumnSpace": 5.3828125,
-  "parentId": "0",
+  "parentId": "bqn2cpxmm8",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "topRow": 10,
+  "topRow": 4,
   "topRowBeforeCollapse": 8,
   "type": "DOCUMENT_VIEWER_WIDGET",
   "version": 1,
-  "widgetId": "o8dx43ir2p",
+  "widgetId": "8gxnd48i1o",
   "widgetName": "DocumentViewer1"
 }

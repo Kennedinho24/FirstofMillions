@@ -44,11 +44,11 @@ export default {
       doc.setFont(undefined, "bold");
       doc.setTextColor(21, 128, 61); // #15803d
       doc.text("Aga Khan Foundation Tanzania", pageWidth / 2, 15, { align: "center" });
-
+			
       doc.setFontSize(12);
       doc.setFont(undefined, "normal");
       doc.setTextColor(0, 0, 0); // reset to black
-      doc.text(`Payroll Month: ${selectedRow.payrollperiod || ""}`, pageWidth / 2, 23, { align: "center" });
+      doc.text(`Salary Slip: ${selectedRow.payrollperiod || ""}`, pageWidth / 2, 23, { align: "center" });
 
       let y = 40;
       const lineHeight = 8;

@@ -1,0 +1,3 @@
+SELECT staffid, "staffdName", payrollperiod, pdfurl
+FROM monthlypayraw
+WHERE payrollperiod ='{{SelectPM.selectedOptionValue}}'
