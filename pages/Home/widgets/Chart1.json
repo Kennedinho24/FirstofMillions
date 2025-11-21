@@ -8,7 +8,7 @@
   "chartData": {
     "4exigbbdjc": {
       "color": "#15803d",
-      "data": "[\n  {\n    \"x\": \"May 2025\",\n    \"y\": 20000\n  },\n  {\n    \"x\": \"Jun 2025\",\n    \"y\": 22000\n  },\n  {\n    \"x\": \"Jul 2025\",\n    \"y\": 32000\n  },\n  {\n    \"x\": \"Aug 2025\",\n    \"y\": 32000\n  },\n  {\n    \"x\": \"Sep 2025\",\n    \"y\": 32000\n  }\n]",
+      "data": "{{\n  (() => {\n    const totals = {};\n\n    // Build totals per payrollperiod\n    GetBasicDataQry.data.forEach(row => {\n      const pp = String(row.payrollperiod || \"Unknown\");\n      const amount = Number(row.basicsalary) || 0;\n      totals[pp] = (totals[pp] || 0) + amount;\n    });\n\n    // Convert totals → chart series format\n    return Object.keys(totals).map(key => ({\n      x: key,\n      y: totals[key]\n    }));\n  })()\n}}\n\n\n\n",
       "seriesName": ""
     }
   },
@@ -77,6 +77,9 @@
     },
     {
       "key": "fontFamily"
+    },
+    {
+      "key": "chartData.4exigbbdjc.data"
     }
   ],
   "dynamicTriggerPathList": [],

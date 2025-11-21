@@ -1,0 +1,1356 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": false,
+  "animateLoading": true,
+  "borderColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "",
+  "bottomRow": 50,
+  "bottomRowBeforeCollapse": 63,
+  "boxShadow": "none",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "staffid",
+    "staffdName",
+    "payrollperiod",
+    "currencycode",
+    "basicsalary",
+    "grosssalary",
+    "totaldeductions",
+    "netpay",
+    "otherbenefits",
+    "salaryadvance",
+    "loandeduction",
+    "socialdeduction",
+    "helsb",
+    "advancerecovery",
+    "otherdeductions",
+    "transid",
+    "nssf",
+    "paye",
+    "wcf",
+    "status",
+    "createdby",
+    "createdat",
+    "reviewedby",
+    "reviewedat",
+    "approvedby",
+    "approvedat",
+    "EditActions1"
+  ],
+  "columnUpdatedAt": 1763664768148,
+  "columnWidthMap": {
+    "basicsalary": 87,
+    "currencycode": 86,
+    "grosssalary": 137,
+    "payrollperiod": 119,
+    "staffdName": 160,
+    "staffid": 129
+  },
+  "compactMode": "SHORT",
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": "[\n  0\n]",
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.staffid.computedValue"
+    },
+    {
+      "key": "primaryColumns.staffdName.computedValue"
+    },
+    {
+      "key": "primaryColumns.basicsalary.computedValue"
+    },
+    {
+      "key": "primaryColumns.salaryadvance.computedValue"
+    },
+    {
+      "key": "primaryColumns.loandeduction.computedValue"
+    },
+    {
+      "key": "primaryColumns.socialdeduction.computedValue"
+    },
+    {
+      "key": "primaryColumns.helsb.computedValue"
+    },
+    {
+      "key": "primaryColumns.advancerecovery.computedValue"
+    },
+    {
+      "key": "primaryColumns.otherdeductions.computedValue"
+    },
+    {
+      "key": "primaryColumns.payrollperiod.computedValue"
+    },
+    {
+      "key": "primaryColumns.transid.computedValue"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveButtonColor"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.discardBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isSaveDisabled"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.grosssalary.computedValue"
+    },
+    {
+      "key": "primaryColumns.nssf.computedValue"
+    },
+    {
+      "key": "primaryColumns.paye.computedValue"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.computedValue"
+    },
+    {
+      "key": "primaryColumns.netpay.computedValue"
+    },
+    {
+      "key": "primaryColumns.currencycode.computedValue"
+    },
+    {
+      "key": "primaryColumns.wcf.computedValue"
+    },
+    {
+      "key": "primaryColumns.otherbenefits.computedValue"
+    },
+    {
+      "key": "primaryColumns.status.computedValue"
+    },
+    {
+      "key": "primaryColumns.staffdName.fontStyle"
+    },
+    {
+      "key": "primaryColumns.staffdName.cellBackground"
+    },
+    {
+      "key": "primaryColumns.payrollperiod.fontStyle"
+    },
+    {
+      "key": "primaryColumns.payrollperiod.cellBackground"
+    },
+    {
+      "key": "primaryColumns.currencycode.cellBackground"
+    },
+    {
+      "key": "primaryColumns.basicsalary.cellBackground"
+    },
+    {
+      "key": "primaryColumns.basicsalary.fontStyle"
+    },
+    {
+      "key": "primaryColumns.grosssalary.fontStyle"
+    },
+    {
+      "key": "primaryColumns.grosssalary.cellBackground"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.cellBackground"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.fontStyle"
+    },
+    {
+      "key": "primaryColumns.netpay.fontStyle"
+    },
+    {
+      "key": "primaryColumns.netpay.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherbenefits.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherbenefits.fontStyle"
+    },
+    {
+      "key": "primaryColumns.salaryadvance.fontStyle"
+    },
+    {
+      "key": "primaryColumns.salaryadvance.cellBackground"
+    },
+    {
+      "key": "primaryColumns.loandeduction.cellBackground"
+    },
+    {
+      "key": "primaryColumns.loandeduction.fontStyle"
+    },
+    {
+      "key": "primaryColumns.socialdeduction.fontStyle"
+    },
+    {
+      "key": "primaryColumns.socialdeduction.cellBackground"
+    },
+    {
+      "key": "primaryColumns.helsb.cellBackground"
+    },
+    {
+      "key": "primaryColumns.helsb.fontStyle"
+    },
+    {
+      "key": "primaryColumns.advancerecovery.fontStyle"
+    },
+    {
+      "key": "primaryColumns.advancerecovery.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherdeductions.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherdeductions.fontStyle"
+    },
+    {
+      "key": "primaryColumns.nssf.fontStyle"
+    },
+    {
+      "key": "primaryColumns.nssf.cellBackground"
+    },
+    {
+      "key": "primaryColumns.paye.cellBackground"
+    },
+    {
+      "key": "primaryColumns.paye.fontStyle"
+    },
+    {
+      "key": "primaryColumns.wcf.fontStyle"
+    },
+    {
+      "key": "primaryColumns.wcf.cellBackground"
+    },
+    {
+      "key": "primaryColumns.createdby.computedValue"
+    },
+    {
+      "key": "primaryColumns.createdat.computedValue"
+    },
+    {
+      "key": "primaryColumns.reviewedby.computedValue"
+    },
+    {
+      "key": "primaryColumns.reviewedat.computedValue"
+    },
+    {
+      "key": "primaryColumns.approvedby.computedValue"
+    },
+    {
+      "key": "primaryColumns.approvedat.computedValue"
+    },
+    {
+      "key": "borderColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isSaveDisabled"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.staffdName.fontStyle"
+    },
+    {
+      "key": "primaryColumns.staffdName.cellBackground"
+    },
+    {
+      "key": "primaryColumns.payrollperiod.fontStyle"
+    },
+    {
+      "key": "primaryColumns.payrollperiod.cellBackground"
+    },
+    {
+      "key": "primaryColumns.currencycode.cellBackground"
+    },
+    {
+      "key": "primaryColumns.basicsalary.cellBackground"
+    },
+    {
+      "key": "primaryColumns.basicsalary.fontStyle"
+    },
+    {
+      "key": "primaryColumns.grosssalary.fontStyle"
+    },
+    {
+      "key": "primaryColumns.grosssalary.cellBackground"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.cellBackground"
+    },
+    {
+      "key": "primaryColumns.totaldeductions.fontStyle"
+    },
+    {
+      "key": "primaryColumns.netpay.fontStyle"
+    },
+    {
+      "key": "primaryColumns.netpay.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherbenefits.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherbenefits.fontStyle"
+    },
+    {
+      "key": "primaryColumns.salaryadvance.fontStyle"
+    },
+    {
+      "key": "primaryColumns.salaryadvance.cellBackground"
+    },
+    {
+      "key": "primaryColumns.loandeduction.cellBackground"
+    },
+    {
+      "key": "primaryColumns.loandeduction.fontStyle"
+    },
+    {
+      "key": "primaryColumns.socialdeduction.fontStyle"
+    },
+    {
+      "key": "primaryColumns.socialdeduction.cellBackground"
+    },
+    {
+      "key": "primaryColumns.helsb.cellBackground"
+    },
+    {
+      "key": "primaryColumns.helsb.fontStyle"
+    },
+    {
+      "key": "primaryColumns.advancerecovery.fontStyle"
+    },
+    {
+      "key": "primaryColumns.advancerecovery.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherdeductions.cellBackground"
+    },
+    {
+      "key": "primaryColumns.otherdeductions.fontStyle"
+    },
+    {
+      "key": "primaryColumns.nssf.fontStyle"
+    },
+    {
+      "key": "primaryColumns.nssf.cellBackground"
+    },
+    {
+      "key": "primaryColumns.paye.cellBackground"
+    },
+    {
+      "key": "primaryColumns.paye.fontStyle"
+    },
+    {
+      "key": "primaryColumns.wcf.fontStyle"
+    },
+    {
+      "key": "primaryColumns.wcf.cellBackground"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.EditActions1.onSave"
+    },
+    {
+      "key": "onAddNewRowSave"
+    },
+    {
+      "key": "onRowSelected"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": false,
+  "isVisibleFilters": false,
+  "isVisiblePagination": false,
+  "isVisibleSearch": false,
+  "key": "5whr1tduue",
+  "label": "Data",
+  "leftColumn": 37,
+  "minWidth": 450,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 0,
+  "multiRowSelection": false,
+  "needsErrorInfo": false,
+  "onAddNewRowSave": "{{InsertNewRow.run().then(() => {\n  showAlert('Record added successfully', 'success');\n});\ngetcurrentmonth.run().then(() => {});}}",
+  "onRowSelected": "{{JSObject5.generatePDFasURL();}}",
+  "originalBottomRow": 86,
+  "originalTopRow": 36,
+  "parentColumnSpace": 20.09375,
+  "parentId": "6xay8cphvo",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "EditActions1": {
+      "alias": "EditActions1",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "editActions",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "discardActionLabel": "Discard",
+      "discardBorderRadius": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "discardButtonColor": "#F22B2B",
+      "discardButtonVariant": "TERTIARY",
+      "discardIconAlign": "left",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "EditActions1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardDisabled": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( !TableCurrentM.updatedRowIndices.includes(currentIndex)))}}",
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveDisabled": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( !TableCurrentM.updatedRowIndices.includes(currentIndex)))}}",
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "Save / Discard",
+      "notation": "standard",
+      "onSave": "{{Update_public_monthlypayraw1.run();\ngetcurrentmonth.run();\nshowAlert('Record updated successfully', 'success');}}",
+      "originalId": "EditActions1",
+      "saveActionLabel": "Save",
+      "saveBorderRadius": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "saveButtonColor": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "saveIconAlign": "left",
+      "sticky": "right",
+      "thousandSeparator": true,
+      "validation": {},
+      "width": 150
+    },
+    "advancerecovery": {
+      "alias": "advancerecovery",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"advancerecovery\"].toLocaleString())) : currentRow[\"advancerecovery\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "advancerecovery",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "advancerecovery",
+      "notation": "standard",
+      "originalId": "advancerecovery",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "approvedat": {
+      "alias": "approvedat",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"approvedat\"])) : approvedat })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "approvedat",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "approvedat",
+      "notation": "standard",
+      "originalId": "approvedat",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "approvedby": {
+      "alias": "approvedby",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"approvedby\"])) : approvedby })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "approvedby",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "approvedby",
+      "notation": "standard",
+      "originalId": "approvedby",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "basicsalary": {
+      "alias": "basicsalary",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"basicsalary\"].toLocaleString())) : currentRow[\"basicsalary\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "RIGHT",
+      "id": "basicsalary",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "basicsalary",
+      "notation": "standard",
+      "originalId": "basicsalary",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "createdat": {
+      "alias": "createdat",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"createdat\"])) : createdat })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "createdat",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "createdat",
+      "notation": "standard",
+      "originalId": "createdat",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "createdby": {
+      "alias": "createdby",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"createdby\"])) : createdby })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "createdby",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "createdby",
+      "notation": "standard",
+      "originalId": "createdby",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "currencycode": {
+      "alias": "currencycode",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"currencycode\"])) : currencycode })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "currencycode",
+      "index": 17,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "currencycode",
+      "notation": "standard",
+      "originalId": "currencycode",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "grosssalary": {
+      "alias": "grosssalary",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"grosssalary\"].toLocaleString())) : currentRow[\"grosssalary\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "grosssalary",
+      "index": 12,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "grosssalary",
+      "notation": "standard",
+      "originalId": "grosssalary",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "helsb": {
+      "alias": "helsb",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"helsb\"].toLocaleString())) : currentRow[\"helsb\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "helsb",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "helsb",
+      "notation": "standard",
+      "originalId": "helsb",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "loandeduction": {
+      "alias": "loandeduction",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"loandeduction\"].toLocaleString())) : currentRow[\"loandeduction\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "loandeduction",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "loandeduction",
+      "notation": "standard",
+      "originalId": "loandeduction",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "netpay": {
+      "alias": "netpay",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"netpay\"].toLocaleString())) : currentRow[\"netpay\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "netpay",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "netpay",
+      "notation": "standard",
+      "originalId": "netpay",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "nssf": {
+      "alias": "nssf",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"nssf\"].toLocaleString())) : currentRow[\"nssf\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "nssf",
+      "index": 13,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "nssf",
+      "notation": "standard",
+      "originalId": "nssf",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "otherbenefits": {
+      "alias": "otherbenefits",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"otherbenefits\"].toLocaleString())) : currentRow[\"otherbenefits\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "otherbenefits",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "otherbenefits",
+      "notation": "standard",
+      "originalId": "otherbenefits",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "otherdeductions": {
+      "alias": "otherdeductions",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"otherdeductions\"].toLocaleString())) : currentRow[\"otherdeductions\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "otherdeductions",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "otherdeductions",
+      "notation": "standard",
+      "originalId": "otherdeductions",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "paye": {
+      "alias": "paye",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"paye\"].toLocaleString())) : currentRow[\"paye\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "paye",
+      "index": 14,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "paye",
+      "notation": "standard",
+      "originalId": "paye",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "payrollperiod": {
+      "alias": "payrollperiod",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"payrollperiod\"])) : payrollperiod })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "payrollperiod",
+      "index": 15,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "payrollperiod",
+      "notation": "standard",
+      "originalId": "payrollperiod",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "reviewedat": {
+      "alias": "reviewedat",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reviewedat\"])) : reviewedat })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "reviewedat",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "reviewedat",
+      "notation": "standard",
+      "originalId": "reviewedat",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "reviewedby": {
+      "alias": "reviewedby",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reviewedby\"])) : reviewedby })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "reviewedby",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "reviewedby",
+      "notation": "standard",
+      "originalId": "reviewedby",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "salaryadvance": {
+      "alias": "salaryadvance",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"salaryadvance\"].toLocaleString())) : currentRow[\"salaryadvance\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "salaryadvance",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "salaryadvance",
+      "notation": "standard",
+      "originalId": "salaryadvance",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "socialdeduction": {
+      "alias": "socialdeduction",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"socialdeduction\"].toLocaleString())) : currentRow[\"socialdeduction\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "socialdeduction",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "socialdeduction",
+      "notation": "standard",
+      "originalId": "socialdeduction",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "staffdName": {
+      "alias": "staffdName",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"staffdName\"])) : staffdName })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "staffdName",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "staffdName",
+      "notation": "standard",
+      "originalId": "staffdName",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "staffid": {
+      "alias": "staffid",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"staffid\"])) : staffid })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "staffid",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "staffid",
+      "notation": "standard",
+      "originalId": "staffid",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "status": {
+      "alias": "status",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "status",
+      "index": 19,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "status",
+      "notation": "standard",
+      "originalId": "status",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "totaldeductions": {
+      "alias": "totaldeductions",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"totaldeductions\"].toLocaleString())) : currentRow[\"totaldeductions\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "totaldeductions",
+      "index": 15,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "totaldeductions",
+      "notation": "standard",
+      "originalId": "totaldeductions",
+      "sticky": "left",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "transid": {
+      "alias": "transid",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"transid\"])) : transid })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "transid",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "transid",
+      "notation": "standard",
+      "originalId": "transid",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "wcf": {
+      "alias": "wcf",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\" )) :  currentRow.staffdName === \"TOTALS\" ? \"#d6eaff\" : \"transparent\"  })()}}",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"wcf\"].toLocaleString())) : currentRow[\"wcf\"].toLocaleString() })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "{{(() => { const tableData = TableCurrentM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\" )) :  currentRow.staffdName === \"TOTALS\" ? \"BOLD\" : \"NORMAL\"  })()}}",
+      "horizontalAlignment": "LEFT",
+      "id": "wcf",
+      "index": 18,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "wcf",
+      "notation": "standard",
+      "originalId": "wcf",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{getcurrentmonth.data}}",
+  "textSize": "0.875rem",
+  "topRow": 0,
+  "topRowBeforeCollapse": 25,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "variant": "VARIANT2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "wtpdhwlkta",
+  "widgetName": "TableCurrentM"
+}

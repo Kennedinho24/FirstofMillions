@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_766e2097-8719-4875-9cba-a867a47f0a2b",
-  "id": "Home_GetBasicDataQry",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_73346d81-e9c2-4645-a289-8f39173575d5",
+  "id": "Home_getuserdetails",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "\nSELECT payrollperiod, \"basicsalary\", status\nFROM monthlypayraw\nORDER BY payrollperiod;\n",
+      "body": "SELECT * FROM public.\"dbuserstbl\" \nWHERE usernametbl = {{ appsmith.store.user.username }}\nLIMIT 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -22,8 +22,12 @@
       "name": "MonthlyPayAppNEON",
       "pluginId": "postgres-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "GetBasicDataQry",
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
+    "name": "getuserdetails",
     "pageId": "Home",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false

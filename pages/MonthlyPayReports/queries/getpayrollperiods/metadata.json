@@ -1,16 +1,16 @@
 {
-  "gitSyncId": "68a9a2053af45e71b9b9fcff_766e2097-8719-4875-9cba-a867a47f0a2b",
-  "id": "Home_GetBasicDataQry",
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_ad832983-80d7-44fd-88da-82602e735c3e",
+  "id": "MonthlyPayReports_getpayrollperiods",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "\nSELECT payrollperiod, \"basicsalary\", status\nFROM monthlypayraw\nORDER BY payrollperiod;\n",
+      "body": "SELECT * FROM public.\"payrollperiods\" ",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": false
+          "value": true
         }
       ],
       "timeoutInMillisecond": 10000
@@ -23,8 +23,8 @@
       "pluginId": "postgres-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "GetBasicDataQry",
-    "pageId": "Home",
+    "name": "getpayrollperiods",
+    "pageId": "MonthlyPayReports",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }

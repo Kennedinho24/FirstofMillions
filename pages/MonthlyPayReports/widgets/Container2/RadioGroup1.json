@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "defaultOptionValue": "Staff",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "d5iu3l18bu",
+  "label": "Reports",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelTextColor": "#1e3a8a",
+  "labelTextSize": "1rem",
+  "labelWidth": 5,
+  "leftColumn": 3,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 7,
+  "mobileTopRow": 15,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Staff",
+      "value": "Staff"
+    },
+    {
+      "label": "Statutory",
+      "value": "Statutory"
+    }
+  ],
+  "originalBottomRow": 11,
+  "originalTopRow": 0,
+  "parentColumnSpace": 20.25,
+  "parentId": "1d9qkuc7i9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 52,
+  "topRow": 0,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "zl7hf63fvp",
+  "widgetName": "RadioGroup1"
+}

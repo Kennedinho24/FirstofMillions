@@ -1,0 +1,52 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 49,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Nunito Sans",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": false,
+  "key": "geodmevcq4",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 14,
+  "mobileTopRow": 43,
+  "needsErrorInfo": false,
+  "originalBottomRow": 49,
+  "originalTopRow": 45,
+  "overflow": "NONE",
+  "parentColumnSpace": 20.40625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 4,
+  "shouldTruncate": false,
+  "text": "{{ \n  (() => {\n    const months = [\"JAN\",\"FEB\",\"MAR\",\"APR\",\"MAY\",\"JUN\",\"JUL\",\"AUG\",\"SEP\",\"OCT\",\"NOV\",\"DEC\"];\n    const now = new Date();\n    const month = months[now.getMonth()]; // getMonth() returns 0-11\n    const year = now.getFullYear().toString().slice(-2); // last two digits of year\n    return `${month}-${year}`;\n  })() \n}}\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 45,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "jm8vvma76z",
+  "widgetName": "Text3"
+}

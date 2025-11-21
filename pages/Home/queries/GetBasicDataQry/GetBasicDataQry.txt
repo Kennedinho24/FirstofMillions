@@ -1,4 +1,4 @@
 
-SELECT "DateMonth", "basicsalary"
+SELECT payrollperiod, "basicsalary", status
 FROM monthlypayraw
-ORDER BY "DateMonth";
+ORDER BY payrollperiod;

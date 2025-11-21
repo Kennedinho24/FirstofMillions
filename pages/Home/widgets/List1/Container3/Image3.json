@@ -1,10 +1,13 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 58,
+  "bottomRow": 10,
   "boxShadow": "none",
   "defaultImage": "https://assets.appsmith.com/widgets/default.png",
   "dynamicBindingPathList": [
+    {
+      "key": "image"
+    },
     {
       "key": "borderRadius"
     }
@@ -13,29 +16,25 @@
   "enableDownload": false,
   "enableRotation": false,
   "flexVerticalAlignment": "start",
-  "image": "https://i.postimg.cc/YqZcbwLT/Whats-App-Image-2025-07-26-at-12-56-25.jpg",
+  "image": "{{currentItem.img}}",
   "imageShape": "RECTANGLE",
   "isLoading": false,
   "isVisible": true,
-  "key": "0exrsb7pl5",
-  "leftColumn": 47,
+  "key": "9gkgasdong",
+  "leftColumn": 0,
   "maxZoomLevel": 1,
-  "mobileBottomRow": 16,
-  "mobileLeftColumn": 23,
-  "mobileRightColumn": 35,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
   "objectFit": "cover",
-  "originalBottomRow": 58,
-  "originalTopRow": 14,
-  "parentColumnSpace": 2.08984375,
-  "parentId": "0",
-  "parentRowSpace": 10,
+  "parentId": "bqoo84b8ti",
   "renderMode": "CANVAS",
-  "rightColumn": 63,
-  "topRow": 14,
+  "rightColumn": 21,
+  "topRow": 0,
   "type": "IMAGE_WIDGET",
   "version": 1,
-  "widgetId": "i5ymkytg2o",
-  "widgetName": "Image2"
+  "widgetId": "uxxga71ohj",
+  "widgetName": "Image3"
 }

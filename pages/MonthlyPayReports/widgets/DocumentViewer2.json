@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "bottomRow": 143,
+  "bottomRowBeforeCollapse": 143,
+  "docUrl": "{{JSObject4.generatePDFstatutory.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "docUrl"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": "{{RadioGroup1.selectedOptionValue === \"Statutory\"}}",
+  "key": "sku22kq5df",
+  "leftColumn": 34,
+  "mobileBottomRow": 105,
+  "mobileLeftColumn": 23,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 65,
+  "needsErrorInfo": false,
+  "originalBottomRow": 143,
+  "originalTopRow": 70,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "topRow": 70,
+  "topRowBeforeCollapse": 70,
+  "type": "DOCUMENT_VIEWER_WIDGET",
+  "version": 1,
+  "widgetId": "gdkw742fe0",
+  "widgetName": "DocumentViewer2"
+}

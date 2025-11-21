@@ -1,0 +1,3 @@
+SELECT * FROM public."dbuserstbl" 
+WHERE usernametbl = {{ appsmith.store.user.username }}
+LIMIT 1;
