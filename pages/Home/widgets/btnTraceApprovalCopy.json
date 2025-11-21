@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 32,
+  "bottomRow": 33,
   "bottomRowBeforeCollapse": 32,
   "boxShadow": "none",
   "buttonColor": "#3f3f46",
@@ -52,7 +52,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 10,
   "text": "Approve Payroll",
-  "topRow": 28,
+  "topRow": 29,
   "topRowBeforeCollapse": 28,
   "type": "BUTTON_WIDGET",
   "version": 1,

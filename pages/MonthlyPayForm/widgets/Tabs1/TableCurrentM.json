@@ -5,11 +5,11 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 68,
+  "bottomRow": 174,
   "bottomRowBeforeCollapse": 63,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "none",
   "cachedTableData": {},
-  "canFreezeColumn": true,
+  "canFreezeColumn": false,
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -58,14 +58,14 @@
     "monthunique",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1763560096284,
+  "columnUpdatedAt": 1763720609857,
   "columnWidthMap": {
     "currencycode": 93,
-    "staffdName": 201,
+    "staffdName": 104,
     "staffid": 76
   },
   "compactMode": "SHORT",
-  "customIsLoading": false,
+  "customIsLoading": true,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
@@ -77,9 +77,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     },
     {
       "key": "tableData"
@@ -118,21 +115,6 @@
       "key": "primaryColumns.transid.computedValue"
     },
     {
-      "key": "primaryColumns.EditActions1.saveButtonColor"
-    },
-    {
-      "key": "primaryColumns.EditActions1.saveBorderRadius"
-    },
-    {
-      "key": "primaryColumns.EditActions1.discardBorderRadius"
-    },
-    {
-      "key": "primaryColumns.EditActions1.isSaveDisabled"
-    },
-    {
-      "key": "primaryColumns.EditActions1.isDiscardDisabled"
-    },
-    {
       "key": "primaryColumns.grosssalary.computedValue"
     },
     {
@@ -164,6 +146,21 @@
     },
     {
       "key": "primaryColumns.monthunique.computedValue"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveButtonColor"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.discardBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isSaveDisabled"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -178,9 +175,6 @@
     }
   ],
   "dynamicTriggerPathList": [
-    {
-      "key": "primaryColumns.EditActions1.onSave"
-    },
     {
       "key": "onAddNewRowSave"
     }
@@ -208,7 +202,7 @@
   "multiRowSelection": true,
   "needsErrorInfo": false,
   "onAddNewRowSave": "{{InsertNewRow.run().then(() => {\n  showAlert('Record added successfully', 'success');\n});\ngetcurrentmonth.run().then(() => {});}}",
-  "originalBottomRow": 68,
+  "originalBottomRow": 174,
   "originalTopRow": 30,
   "parentColumnSpace": 20.09375,
   "parentId": "0qztxiqwbr",
@@ -244,7 +238,6 @@
       "isVisible": true,
       "label": "Save / Discard",
       "notation": "standard",
-      "onSave": "{{Update_public_monthlypayraw1.run();\ngetcurrentmonth.run();\nshowAlert('Record updated successfully', 'success');}}",
       "originalId": "EditActions1",
       "saveActionLabel": "Save",
       "saveBorderRadius": "{{TableCurrentM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
@@ -310,7 +303,7 @@
       "label": "basicsalary",
       "notation": "standard",
       "originalId": "basicsalary",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -341,7 +334,7 @@
       "label": "currencycode",
       "notation": "standard",
       "originalId": "currencycode",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -372,7 +365,7 @@
       "label": "grosssalary",
       "notation": "standard",
       "originalId": "grosssalary",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -499,7 +492,7 @@
       "label": "netpay",
       "notation": "standard",
       "originalId": "netpay",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -720,7 +713,7 @@
       "label": "payrollperiod",
       "notation": "standard",
       "originalId": "payrollperiod",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -875,7 +868,7 @@
       "label": "totaldeductions",
       "notation": "standard",
       "originalId": "totaldeductions",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -949,6 +942,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
+  "serverSidePaginationEnabled": false,
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{getcurrentmonth.data}}",
   "textSize": "0.875rem",

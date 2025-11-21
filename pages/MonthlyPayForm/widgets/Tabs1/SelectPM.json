@@ -53,7 +53,7 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 15,
+  "rightColumn": 14,
   "serverSideFiltering": false,
   "sourceData": "{{getpayrollperiods.data}}",
   "topRow": 1,

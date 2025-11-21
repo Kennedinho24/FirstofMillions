@@ -4,6 +4,7 @@ export default {
     return inputMonthlyPaytbl.selectedRows.map(r => ({
       staffid: r.staffid,
       staffdName: r.staffdName,
+			currencycode: r.currencycode,
       basicsalary: Number(String(r.basicsalary).replace(/,/g, '')) || 0,
       otherbenefits: Number(String(r.otherbenefits).replace(/,/g, '')) || 0,
       salaryadvance: Number(String(r.salaryadvance).replace(/,/g, '')) || 0,

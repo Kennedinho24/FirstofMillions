@@ -1,17 +1,16 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 27,
+  "bottomRow": 179,
   "boxShadow": "none",
-  "buttonColor": "#3b82f6",
-  "buttonVariant": "SECONDARY",
+  "buttonColor": "#1e3a8a",
+  "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -21,30 +20,30 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "zxgqpj8jcm",
-  "leftColumn": 48,
+  "key": "14cpavdqlw",
+  "leftColumn": 56,
   "minWidth": 120,
-  "mobileBottomRow": 8,
-  "mobileLeftColumn": 25,
-  "mobileRightColumn": 41,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 23,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "onClick": "{{JSObject3.runPayroll();\ngetcurrentmonth.run()}}",
-  "originalBottomRow": 27,
-  "originalTopRow": 23,
-  "parentColumnSpace": 10.25,
-  "parentId": "uv239lk8ut",
+  "onClick": "{{JSObject4.submitPayroll();}}",
+  "originalBottomRow": 179,
+  "originalTopRow": 175,
+  "parentColumnSpace": 19.9375,
+  "parentId": "0qztxiqwbr",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 62,
-  "text": "Generate Next Payroll",
-  "topRow": 23,
+  "rightColumn": 64,
+  "text": "Submit for review",
+  "topRow": 175,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "s70idmnfrk",
-  "widgetName": "btnSubmitForApproval"
+  "widgetId": "d7ic0l94iw",
+  "widgetName": "Button2Copy"
 }

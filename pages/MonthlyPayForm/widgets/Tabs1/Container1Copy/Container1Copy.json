@@ -74,7 +74,7 @@
   "isLoading": false,
   "isVisible": "{{ TableCurrentM.tableData.length > 0 }}\n",
   "key": "d0jyuu6s2m",
-  "leftColumn": 25,
+  "leftColumn": 14,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,

@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#14532d",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 10,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -31,7 +31,7 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 50,
   "needsErrorInfo": false,
-  "originalBottomRow": 9,
+  "originalBottomRow": 10,
   "originalTopRow": 5,
   "overflow": "NONE",
   "parentColumnSpace": 17.9375,
@@ -44,7 +44,7 @@
   "text": "TZS: {{inputMonthlyPaytbl.tableData\n         .filter(row => row.currencycode === 'TZS')\n         .reduce((sum, row) => sum + Number(row.netpay || 0), 0).toLocaleString()\n}}",
   "textAlign": "CENTER",
   "textColor": "#eab308",
-  "topRow": 8,
+  "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

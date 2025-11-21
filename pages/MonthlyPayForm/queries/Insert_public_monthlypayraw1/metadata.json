@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO public.monthlypayraw (\n  staffid, \"staffdName\", basicsalary, otherbenefits,\n  salaryadvance, loandeduction, socialdeduction, helsb,\n  advancerecovery, otherdeductions, payrollperiod, monthunique, paye_flag, nssf_flag\n)\nSELECT\n  staffid,\n  \"staffdName\",\n  basicsalary,\n  otherbenefits,\n  salaryadvance,\n  loandeduction,\n  socialdeduction,\n  helsb,\n  advancerecovery,\n  otherdeductions,\n  '{{ SelectCurrentM.selectedOptionValue }}' AS payrollperiod,\n\tmonthunique,\n\tpaye_flag,\n\tnssf_flag\n\t\nFROM json_populate_recordset(\n  NULL::public.monthlypayraw,\n  '{{ JSON.stringify(JSObject2.cleanRows()) }}'::json\n);\n\n\n",
+      "body": "INSERT INTO public.monthlypayraw (\n  staffid, \"staffdName\", currencycode, basicsalary, otherbenefits,\n  salaryadvance, loandeduction, socialdeduction, helsb,\n  advancerecovery, otherdeductions, payrollperiod, monthunique, paye_flag, nssf_flag\n)\nSELECT\n  staffid,\n  \"staffdName\",\n\tcurrencycode,\n  basicsalary,\n  otherbenefits,\n  salaryadvance,\n  loandeduction,\n  socialdeduction,\n  helsb,\n  advancerecovery,\n  otherdeductions,\n  '{{ SelectCurrentM.selectedOptionValue }}' AS payrollperiod,\n\tmonthunique,\n\tpaye_flag,\n\tnssf_flag\n\t\nFROM json_populate_recordset(\n  NULL::public.monthlypayraw,\n  '{{ JSON.stringify(JSObject2.cleanRows()) }}'::json\n);\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

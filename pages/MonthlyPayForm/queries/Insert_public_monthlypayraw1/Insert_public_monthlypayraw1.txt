@@ -1,11 +1,12 @@
 INSERT INTO public.monthlypayraw (
-  staffid, "staffdName", basicsalary, otherbenefits,
+  staffid, "staffdName", currencycode, basicsalary, otherbenefits,
   salaryadvance, loandeduction, socialdeduction, helsb,
   advancerecovery, otherdeductions, payrollperiod, monthunique, paye_flag, nssf_flag
 )
 SELECT
   staffid,
   "staffdName",
+	currencycode,
   basicsalary,
   otherbenefits,
   salaryadvance,
