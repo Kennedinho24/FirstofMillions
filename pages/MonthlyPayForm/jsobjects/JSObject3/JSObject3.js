@@ -6,6 +6,8 @@ export default {
 
       // Now run insert query
       await Insert_public_monthlypayraw1.run();
+			
+			await getcurrentmonth.run();
 
       showAlert(
         "NEXT Month payroll has been created successfully, please review, correct, and submit for approval.",

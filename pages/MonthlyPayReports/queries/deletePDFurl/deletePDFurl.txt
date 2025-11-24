@@ -1,0 +1,8 @@
+UPDATE monthlypayraw
+SET pdfurl = NULL
+WHERE TRIM(monthunique) IN (
+  {{ getslipspdf.data.map(r => `'${r.monthunique.trim()}'`).join(",") }}
+);
+
+
+

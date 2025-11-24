@@ -30,6 +30,6 @@
     "name": "getcurrentmonth",
     "pageId": "MonthlyPayReports",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

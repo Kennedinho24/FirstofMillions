@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 50,
+  "bottomRow": 47,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -55,7 +55,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 41,
   "text": "Log in",
-  "topRow": 46,
+  "topRow": 43,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "hdcqns723l",

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 24,
+  "bottomRow": 21,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -32,7 +32,7 @@
     "click",
     "submit"
   ],
-  "topRow": 19,
+  "topRow": 16,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "c3dlqynxus",

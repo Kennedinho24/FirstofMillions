@@ -5,5 +5,6 @@ export default {
     await getslipspdf.run();
     await getstaffcontacts.run();
     await JSObject7.sendAllPayslips();
+		await deletePDFurl.run();
   }
 }

@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#14532d",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 10,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -31,8 +31,8 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 50,
   "needsErrorInfo": false,
-  "originalBottomRow": 10,
-  "originalTopRow": 5,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
   "overflow": "NONE",
   "parentColumnSpace": 17.9375,
   "parentId": "arlmwpjf7f",
@@ -44,7 +44,7 @@
   "text": "TZS: {{TableCurrentM.tableData\n         .filter(row => row.currencycode === 'TZS')\n         .reduce((sum, row) => sum + Number(row.nssf || 0), 0).toLocaleString()\n}}",
   "textAlign": "CENTER",
   "textColor": "#eab308",
-  "topRow": 5,
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

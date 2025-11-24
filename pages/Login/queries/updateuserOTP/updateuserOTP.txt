@@ -1,0 +1,3 @@
+UPDATE dbuserstbl
+SET otp = {{ this.params.otp }}
+WHERE useremail = {{ this.params.email }};

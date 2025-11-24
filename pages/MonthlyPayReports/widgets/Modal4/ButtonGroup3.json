@@ -1,0 +1,81 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "buttonVariant": "SECONDARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Yes",
+      "menuItems": {},
+      "onClick": "{{JSObject8.runAll();\ncloseModal(Modal4.name);}}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "#b91c1c",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "No",
+      "menuItems": {},
+      "onClick": "{{closeModal(Modal4.name);}}",
+      "placement": "CENTER",
+      "widgetId": ""
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "405s29i98j",
+  "leftColumn": 53,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 40,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "orientation": "vertical",
+  "parentColumnSpace": 11.728124999999999,
+  "parentId": "84lj87x114",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 60,
+  "topRow": 0,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "kypcqa646z",
+  "widgetName": "ButtonGroup3"
+}

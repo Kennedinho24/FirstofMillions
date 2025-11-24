@@ -1,2 +1,4 @@
 DELETE FROM public.monthlypayraw
-WHERE monthunique = '{{ TableCurrentM.selectedRow.monthunique }}';
+WHERE monthunique IN ({{ TableCurrentM.selectedRows.map(r => `'${r.monthunique}'`).join(",") }});
+
+

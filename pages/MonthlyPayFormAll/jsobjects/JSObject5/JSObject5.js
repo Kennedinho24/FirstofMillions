@@ -9,14 +9,25 @@ export default {
       }
 
       const doc = new jsPDF("landscape");
-      const rows = TableCurrentM.tableData || [];
+      let rows = TableCurrentM.tableData || [];
 
       if (!rows.length) {
         showAlert("No data in table!", "warning");
         return "";
       }
 
-      // Footer fields (lowercase)
+      // ----------------------------
+      // SORT BY CURRENCY (TZS first)
+      // ----------------------------
+      rows = rows.sort((a, b) => {
+        const A = a.currencycode || "";
+        const B = b.currencycode || "";
+        if (A === "TZS" && B !== "TZS") return -1;
+        if (B === "TZS" && A !== "TZS") return 1;
+        return A.localeCompare(B);
+      });
+
+      // Footer fields
       const first = rows[0] || {};
       const createdBy = first.createdby || "";
       const reviewedBy = first.reviewedby || "";
@@ -26,14 +37,22 @@ export default {
       const reviewedAt = first.reviewedat || "";
       const approvedAt = first.approvedat || "";
 
-      // Title
+      // -----------------------------
+      // HEADER
+      // -----------------------------
       doc.setFontSize(16);
       doc.text("Monthly Payroll Report", 14, 15);
 
-      // Columns
+      // -----------------------------
+      // COLUMNS (WCF REMOVED)
+      // -----------------------------
       const columns = [
         { header: "Payroll Period", dataKey: "payrollperiod" },
         { header: "Staff Name", dataKey: "staffdName" },
+
+        // NEW COLUMN (currency)
+        { header: "Currency", dataKey: "currencycode" },
+
         { header: "Basic", dataKey: "basicsalary" },
         { header: "Benefits", dataKey: "otherbenefits" },
         { header: "Advance", dataKey: "salaryadvance" },
@@ -45,37 +64,113 @@ export default {
         { header: "NSSF", dataKey: "nssf" },
         { header: "PAYE", dataKey: "paye" },
         { header: "Total Deductions", dataKey: "totaldeductions" },
-        { header: "Net Pay", dataKey: "netpay" },
-        { header: "WCF", dataKey: "wcf" }
+        { header: "Net Pay", dataKey: "netpay" }
       ];
 
-      const formatNumber = (n) => (n === null || n === undefined ? "" : n.toLocaleString());
+      const num = (v) => (v ? Number(v) : 0);
+      const fmt = (v) =>
+        v === null || v === undefined || v === "" ? "" : Number(v).toLocaleString();
 
-      const body = rows.map(r => ({
-        payrollperiod: r.payrollperiod,
-        staffdName: r.staffdName,
-        basicsalary: formatNumber(r.basicsalary),
-        otherbenefits: formatNumber(r.otherbenefits),
-        salaryadvance: formatNumber(r.salaryadvance),
-        loandeduction: formatNumber(r.loandeduction),
-        socialdeduction: formatNumber(r.socialdeduction),
-        helsb: formatNumber(r.helsb),
-        advancerecovery: formatNumber(r.advancerecovery),
-        otherdeductions: formatNumber(r.otherdeductions),
-        nssf: formatNumber(r.nssf),
-        paye: formatNumber(r.paye),
-        totaldeductions: formatNumber(r.totaldeductions),
-        netpay: formatNumber(r.netpay),
-        wcf: formatNumber(r.wcf)
-      }));
+      // ---------------------------------------
+      // GROUP ROWS BY CURRENCY + SUBTOTALS
+      // ---------------------------------------
+      let groupedRows = [];
+      let currentCurrency = "";
+      let subtotal = null;
 
-      // Generate table
+      const startSubtotal = () => ({
+        basicsalary: 0,
+        otherbenefits: 0,
+        salaryadvance: 0,
+        loandeduction: 0,
+        socialdeduction: 0,
+        helsb: 0,
+        advancerecovery: 0,
+        otherdeductions: 0,
+        nssf: 0,
+        paye: 0,
+        totaldeductions: 0,
+        netpay: 0
+      });
+
+      rows.forEach((r) => {
+        if (r.currencycode !== currentCurrency) {
+          if (currentCurrency !== "") {
+            groupedRows.push({
+              staffdName: "SUBTOTAL",
+              currencycode: currentCurrency,
+              ...Object.fromEntries(
+                Object.entries(subtotal).map(([k, v]) => [k, fmt(v)])
+              ),
+              isSubtotal: true
+            });
+          }
+
+          currentCurrency = r.currencycode;
+          subtotal = startSubtotal();
+        }
+
+        subtotal.basicsalary += num(r.basicsalary);
+        subtotal.otherbenefits += num(r.otherbenefits);
+        subtotal.salaryadvance += num(r.salaryadvance);
+        subtotal.loandeduction += num(r.loandeduction);
+        subtotal.socialdeduction += num(r.socialdeduction);
+        subtotal.helsb += num(r.helsb);
+        subtotal.advancerecovery += num(r.advancerecovery);
+        subtotal.otherdeductions += num(r.otherdeductions);
+        subtotal.nssf += num(r.nssf);
+        subtotal.paye += num(r.paye);
+        subtotal.totaldeductions += num(r.totaldeductions);
+        subtotal.netpay += num(r.netpay);
+
+        groupedRows.push({
+          payrollperiod: r.payrollperiod,
+          staffdName: r.staffdName,
+          currencycode: r.currencycode,
+          basicsalary: fmt(r.basicsalary),
+          otherbenefits: fmt(r.otherbenefits),
+          salaryadvance: fmt(r.salaryadvance),
+          loandeduction: fmt(r.loandeduction),
+          socialdeduction: fmt(r.socialdeduction),
+          helsb: fmt(r.helsb),
+          advancerecovery: fmt(r.advancerecovery),
+          otherdeductions: fmt(r.otherdeductions),
+          nssf: fmt(r.nssf),
+          paye: fmt(r.paye),
+          totaldeductions: fmt(r.totaldeductions),
+          netpay: fmt(r.netpay),
+          isSubtotal: false
+        });
+      });
+
+      // Final subtotal for last currency
+      if (currentCurrency !== "") {
+        groupedRows.push({
+          staffdName: "SUBTOTAL",
+          currencycode: currentCurrency,
+          ...Object.fromEntries(
+            Object.entries(subtotal).map(([k, v]) => [k, fmt(v)])
+          ),
+          isSubtotal: true
+        });
+      }
+
+      // ------------------------------
+      // AUTOTABLE
+      // ------------------------------
       doc.autoTable({
         startY: 25,
         columns,
-        body,
+        body: groupedRows,
         styles: { fontSize: 8 },
+        didParseCell: function (data) {
+          if (data.row.raw.isSubtotal) {
+            data.cell.styles.fontStyle = "bold";
+            data.cell.styles.fillColor = [210, 245, 210]; // light green
+          }
+        },
         columnStyles: {
+          currencycode: { halign: "center" },
           basicsalary: { halign: "right" },
           otherbenefits: { halign: "right" },
           salaryadvance: { halign: "right" },
@@ -87,48 +182,37 @@ export default {
           nssf: { halign: "right" },
           paye: { halign: "right" },
           totaldeductions: { halign: "right" },
-          netpay: { halign: "right" },
-          wcf: { halign: "right" }
-        },
-        didParseCell: function(data) {
-          if (data.row.raw.staffdName === "TOTALS") {
-            data.cell.styles.fontStyle = "bold";
-            data.cell.styles.fillColor = [214, 234, 255];
-          }
+          netpay: { halign: "right" }
         }
       });
 
-      // Footer
+      // ------------------------------
+      // FOOTER
+      // ------------------------------
       const pageHeight = doc.internal.pageSize.height;
       const footerY = pageHeight - 28;
       const colWidth = doc.internal.pageSize.width / 3;
 
       doc.setFontSize(13);
       doc.setFont(undefined, "italic");
-      doc.setTextColor(70, 70, 70);
       doc.text(`created by: ${createdBy}`, 10, footerY);
       doc.text(`reviewed by: ${reviewedBy}`, colWidth + 10, footerY);
       doc.text(`approved by: ${approvedBy}`, colWidth * 2 + 10, footerY);
 
-      // Underlines
       doc.setDrawColor(160, 160, 160);
       doc.line(10, footerY + 2, colWidth - 15, footerY + 2);
       doc.line(colWidth + 10, footerY + 2, colWidth * 2 - 15, footerY + 2);
       doc.line(colWidth * 2 + 10, footerY + 2, colWidth * 3 - 15, footerY + 2);
 
-      // Dates
       doc.setFontSize(10);
       doc.setFont(undefined, "normal");
-      doc.setTextColor(0, 0, 0);
       doc.text(`created at: ${createdAt}`, 10, footerY + 8);
       doc.text(`reviewed at: ${reviewedAt}`, colWidth + 10, footerY + 8);
       doc.text(`approved at: ${approvedAt}`, colWidth * 2 + 10, footerY + 8);
 
-      // --- Download directly as data URL to avoid corruption ---
+      // FINAL DATA URL
       const dataUrl = doc.output("datauristring");
       await download(dataUrl, "Payroll_Report.pdf", "application/pdf");
-
-      // Return URL as well if needed for preview
       return dataUrl;
 
     } catch (e) {
@@ -137,3 +221,5 @@ export default {
     }
   }
 };
+
+

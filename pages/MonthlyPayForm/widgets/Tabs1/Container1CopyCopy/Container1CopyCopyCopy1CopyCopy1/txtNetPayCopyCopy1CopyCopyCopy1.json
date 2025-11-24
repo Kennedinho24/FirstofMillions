@@ -2,7 +2,7 @@
   "animateLoading": true,
   "backgroundColor": "#14532d",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 12,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -44,7 +44,7 @@
   "text": "USD: {{inputMonthlyPaytbl.tableData\n         .filter(row => row.currencycode === 'USD')\n         .reduce((sum, row) => sum + Number(row.paye || 0), 0).toLocaleString()\n}}",
   "textAlign": "CENTER",
   "textColor": "#eab308",
-  "topRow": 9,
+  "topRow": 8,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -5,12 +5,12 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "DELETE FROM public.monthlypayraw\nWHERE monthunique = '{{ TableCurrentM.selectedRow.monthunique }}';\n",
+      "body": "DELETE FROM public.monthlypayraw\nWHERE monthunique IN ({{ TableCurrentM.selectedRows.map(r => `'${r.monthunique}'`).join(\",\") }});\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
       "timeoutInMillisecond": 10000

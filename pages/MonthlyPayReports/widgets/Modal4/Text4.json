@@ -1,0 +1,47 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "Nunito Sans",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7wwjwcpevv",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 7,
+  "originalTopRow": 2,
+  "overflow": "NONE",
+  "parentId": "84lj87x114",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 53,
+  "shouldTruncate": false,
+  "text": "Are you sure you want to run this process?\nIt will take approximately 2 minutes to complete and cannot be reversed.",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 2,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "hpdng0lcg6",
+  "widgetName": "Text4"
+}

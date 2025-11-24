@@ -36,7 +36,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{JSObject8.runAll();}}",
+  "onClick": "{{showModal(Modal4.name);}}",
   "parentColumnSpace": 6.6484375,
   "parentId": "6xay8cphvo",
   "parentRowSpace": 10,

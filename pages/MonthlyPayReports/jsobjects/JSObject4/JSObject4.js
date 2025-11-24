@@ -29,26 +29,33 @@ export default {
       const col2X = 80;
       const col3X = 160;
 
-      const formatNumber = (n) => (n === null || n === undefined ? "0" : n.toLocaleString());
+      const formatNumber = (n) =>
+        (n === null || n === undefined ? "0" : Number(n).toLocaleString());
+
+      // --- DETECT PAYE ---
+      const selectedValue = Select1?.selectedOptionValue?.toString().toLowerCase() || "";
+      const selectedLabel = Select1?.selectedOptionLabel?.toString().toLowerCase() || "";
+      const isPAYE = selectedValue === "paye" || selectedLabel === "paye";
 
       // --- HEADER ---
       doc.setFontSize(16);
-      doc.setFont(undefined, "bold");
-      doc.setTextColor(21, 128, 61); // #15803d
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(21, 128, 61);
       doc.text("Aga Khan Foundation Tanzania", pageWidth / 2, 15, { align: "center" });
 
       doc.setFontSize(12);
-      doc.setFont(undefined, "normal");
+      doc.setFont("helvetica", "normal");
       doc.setTextColor(0, 0, 0);
 
-      // Report type followed by Payroll period
       const reportLabel = Select1?.selectedOptionLabel || "";
       const payrollPeriod = SelectPMCopy?.selectedOptionLabel || "";
-      const headerText = payrollPeriod ? `${reportLabel} - Payroll Period: ${payrollPeriod}` : reportLabel;
+      const headerText = payrollPeriod
+        ? `${reportLabel} - Payroll Period: ${payrollPeriod}`
+        : reportLabel;
 
       doc.text(headerText, pageWidth / 2, 23, { align: "center" });
 
-      // --- HORIZONTAL LINE ---
+      // --- LINE ---
       doc.setDrawColor(0, 0, 0);
       doc.setLineWidth(0.5);
       doc.line(leftMargin, 28, pageWidth - leftMargin, 28);
@@ -56,44 +63,65 @@ export default {
       // --- TABLE HEADER ---
       let y = 40;
       doc.setFontSize(12);
-      doc.setFont(undefined, "bold");
+      doc.setFont("helvetica", "bold");
       doc.text("Staff ID", leftMargin, y);
       doc.text("Staff Name", col2X, y);
       doc.text(reportLabel || "Value", col3X, y, { align: "right" });
       y += lineHeight;
 
       // --- TABLE ROWS ---
-      doc.setFont(undefined, "normal");
+      doc.setFont("helvetica", "normal");
+
       let totalValue = 0;
+      let totalTaxable = 0;
 
-      dataRows.forEach(row => {
-        doc.text(row.staffid || "", leftMargin, y);
-        doc.text(row.staffdName || "", col2X, y);
-
+      dataRows.forEach((row) => {
         const dynamicKey = Select1.selectedOptionValue;
         const dynamicValue = row.hasOwnProperty(dynamicKey) ? row[dynamicKey] : 0;
 
-        doc.text(formatNumber(dynamicValue), col3X, y, { align: "right" });
         totalValue += Number(dynamicValue) || 0;
+
+        if (isPAYE) {
+          totalTaxable += Number(row.taxable || 0);
+        }
+
+        doc.text(row.staffid || "", leftMargin, y);
+        doc.text(row.staffdName || "", col2X, y);
+        doc.text(formatNumber(dynamicValue), col3X, y, { align: "right" });
+
         y += lineHeight;
 
-        // --- PAGE BREAK ---
         if (y > pageHeight - 30) {
           doc.addPage();
           y = 20;
         }
       });
 
+      // --- ADD NEW ROW "Taxable" BEFORE TOTALS ---
+      if (isPAYE) {
+        if (y > pageHeight - 30) {
+          doc.addPage();
+          y = 20;
+        }
+
+        doc.setFont("helvetica", "bold");
+        doc.text("Taxable", col2X, y);                  // Row name is now "Taxable"
+        doc.text(formatNumber(totalTaxable), col3X, y, { align: "right" });
+        y += lineHeight;
+      }
+
       // --- TOTAL ROW ---
-      doc.setFont(undefined, "bold");
+      doc.setFont("helvetica", "bold");
       doc.text("Totals", col2X, y);
       doc.text(formatNumber(totalValue), col3X, y, { align: "right" });
 
       // --- FOOTER ---
       doc.setFontSize(10);
-      doc.setFont(undefined, "italic");
+      doc.setFont("helvetica", "italic");
       doc.setTextColor(100, 100, 100);
-      doc.text("© Aga Khan Foundation Tanzania", pageWidth / 2, pageHeight - 20, { align: "center" });
+      doc.text("© Aga Khan Foundation Tanzania", pageWidth / 2, pageHeight - 20, {
+        align: "center",
+      });
 
       return doc.output("datauristring");
 
@@ -101,6 +129,9 @@ export default {
       showAlert("Error generating PDF: " + e.message, "error");
       return "";
     }
-  }
+  },
 };
+
+
+
 

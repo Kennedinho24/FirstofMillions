@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "68a9a2053af45e71b9b9fcff_acb6b584-4dea-4248-8b8d-2c4c5d8d9f0f",
+  "id": "MonthlyPayReports_JSObject10",
+  "unpublishedCollection": {
+    "name": "JSObject10",
+    "pageId": "MonthlyPayReports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

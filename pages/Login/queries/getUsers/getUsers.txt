@@ -1,5 +1,5 @@
 
-SELECT usernametbl, passwordtbl
+SELECT usernametbl, passwordtbl, useremail, otp
 FROM dbuserstbl
 WHERE usernametbl = {{ inpUsername.text.trim() }}
 LIMIT 1;

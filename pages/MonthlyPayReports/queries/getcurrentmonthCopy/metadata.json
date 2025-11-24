@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "WITH main AS (\n  SELECT \n    transid,\n    staffid,\n\t  createdby,\n\t  createdat,\n\t  reviewedby,\n\t  reviewedat,\n\t  approvedby,\n\t  approvedat,\n    \"staffdName\",\n    basicsalary,\n    otherbenefits,\n    salaryadvance,\n    loandeduction,\n    socialdeduction,\n    helsb,\n    advancerecovery,\n    otherdeductions,\n    grosssalary,\n    nssf,\n    paye,\n    totaldeductions,\n    netpay,\n    payrollperiod,\n    currencycode,\n    wcf,\n    status\n  FROM public.\"monthlypayraw\"\n  WHERE \n    (\n      {{ SelectPMCopy.selectedOptionValue \n          ? `payrollperiod = '${SelectPMCopy.selectedOptionValue}'`\n          : \"TRUE\"\n      }}\n    )\n  AND \n    (\n      {{ SelectCurrencyCopy.selectedOptionValue\n          ? `currencycode = '${SelectCurrencyCopy.selectedOptionValue}'`\n          : \"TRUE\"\n      }}\n    )\n  AND \n    (\n      \"staffdName\" ILIKE '%' || '{{ InputKeyWord.text }}' || '%'\n      OR staffid::text ILIKE '%' || '{{ InputKeyWord.text }}' || '%'\n    )\n)\n\n-- Return all original rows\nSELECT * \nFROM main\n\nUNION ALL\n\n-- Add totals row\nSELECT\n  NULL AS transid,\n  NULL AS staffid,\n\tNULL AS createdby,\n\tNULL AS createdat,\n\tNULL AS reviewedby,\n\tNULL AS reviewedat,\n\tNULL AS approvedby,\n\tNULL AS approvedat,\n  'TOTALS' AS \"staffdName\",\n  SUM(basicsalary) AS basicsalary,\n  SUM(otherbenefits) AS otherbenefits,\n  SUM(salaryadvance) AS salaryadvance,\n  SUM(loandeduction) AS loandeduction,\n  SUM(socialdeduction) AS socialdeduction,\n  SUM(helsb) AS helsb,\n  SUM(advancerecovery) AS advancerecovery,\n  SUM(otherdeductions) AS otherdeductions,\n  SUM(grosssalary) AS grosssalary,\n  SUM(nssf) AS nssf,\n  SUM(paye) AS paye,\n  SUM(totaldeductions) AS totaldeductions,\n  SUM(netpay) AS netpay,\n  NULL AS payrollperiod,\n  NULL AS currencycode,\n  SUM(wcf) AS wcf,\n  NULL AS status\nFROM main;\n\n\n",
+      "body": "SELECT \n  transid,\n  staffid,\n  createdby,\n  createdat,\n  reviewedby,\n  reviewedat,\n  approvedby,\n  approvedat,\n  \"staffdName\",\n  basicsalary,\n  otherbenefits,\n  salaryadvance,\n  loandeduction,\n  socialdeduction,\n  helsb,\n  advancerecovery,\n  otherdeductions,\n  grosssalary,\n  nssf,\n  paye,\n  totaldeductions,\n  netpay,\n  payrollperiod,\n  currencycode,\n  wcf,\n  status\nFROM public.\"monthlypayraw\"\nWHERE \n  (\n    {{ SelectPMCopy.selectedOptionValue \n        ? `payrollperiod = '${SelectPMCopy.selectedOptionValue}'`\n        : \"TRUE\"\n    }}\n  )\nAND \n  (\n    {{ SelectCurrencyCopy.selectedOptionValue\n        ? `currencycode = '${SelectCurrencyCopy.selectedOptionValue}'`\n        : \"TRUE\"\n    }}\n  )\nAND \n  (\n    \"staffdName\" ILIKE '%' || '{{ InputKeyWord.text }}' || '%'\n    OR staffid::text ILIKE '%' || '{{ InputKeyWord.text }}' || '%'\n  );\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -30,6 +30,6 @@
     "name": "getcurrentmonthCopy",
     "pageId": "MonthlyPayReports",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

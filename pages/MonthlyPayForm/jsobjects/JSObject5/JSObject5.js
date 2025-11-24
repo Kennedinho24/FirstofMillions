@@ -4,7 +4,9 @@ export default {
     const doc = new jsPDF("landscape");
 
     const darkGreen = "#0B4F3F";
+    const subtotalBg = "#E6F4EE";
     const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
 
     // ============================
     // HEADER + LOGO
@@ -33,11 +35,12 @@ export default {
     doc.setTextColor("#000000");
 
     // ============================
-    // COLUMNS
+    // TABLE COLUMNS
     // ============================
     const columns = [
       "Staff ID",
       "Staff Name",
+      "Currency",
       "Basic Salary",
       "Other Benefits",
       "Salary Advance",
@@ -57,43 +60,106 @@ export default {
         : TableCurrentM?.tableData ?? [];
 
     // ============================
-    // ROWS: format numbers with commas
+    // NUMBER FORMATTER
     // ============================
-    const toNumber = (v) =>
-      v ? Number(String(v).replace(/,/g, "")).toLocaleString() : "0";
-
-    const rows = sourceRows.map(row => [
-      row.staffid ?? "",
-      row.staffdName ?? "",
-      toNumber(row.basicsalary),
-      toNumber(row.otherbenefits),
-      toNumber(row.salaryadvance),
-      toNumber(row.loandeduction),
-      toNumber(row.socialdeduction),
-      toNumber(row.helsb),
-      toNumber(row.advancerecovery),
-      toNumber(row.otherdeductions),
-      toNumber(row.nssf),
-      toNumber(row.paye),
-      toNumber(row.netpay)
-    ]);
+    const cleanNum = (v) => Number(String(v ?? 0).replace(/,/g, "")) || 0;
+    const fmt = (v) => cleanNum(v).toLocaleString();
 
     // ============================
-    // RIGHT-ALIGN ALL NUMBER COLUMNS
-    // columns 2 → 13 = numeric
+    // SORT BY CURRENCY (TZS → USD)
     // ============================
-    const columnStyles = {
-      0: { halign: "left" },
-      1: { halign: "left" },
+    const sorted = [...sourceRows].sort((a, b) => {
+      const order = { "TZS": 1, "USD": 2 };
+      return (order[a.currencycode] ?? 99) - (order[b.currencycode] ?? 99);
+    });
+
+    // ============================
+    // GROUP + SUBTOTALS
+    // ============================
+    const rows = [];
+    let currentCurrency = null;
+
+    let subtotal = {
+      basicsalary: 0,
+      otherbenefits: 0,
+      salaryadvance: 0,
+      loandeduction: 0,
+      socialdeduction: 0,
+      helsb: 0,
+      advancerecovery: 0,
+      otherdeductions: 0,
+      nssf: 0,
+      paye: 0,
+      netpay: 0
     };
 
-    // Loop numeric columns and set halign = right
+    const pushSubtotal = (currency) => {
+      rows.push([
+        "", `Subtotal (${currency})`, currency,
+        fmt(subtotal.basicsalary),
+        fmt(subtotal.otherbenefits),
+        fmt(subtotal.salaryadvance),
+        fmt(subtotal.loandeduction),
+        fmt(subtotal.socialdeduction),
+        fmt(subtotal.helsb),
+        fmt(subtotal.advancerecovery),
+        fmt(subtotal.otherdeductions),
+        fmt(subtotal.nssf),
+        fmt(subtotal.paye),
+        fmt(subtotal.netpay)
+      ]);
+    };
+
+    for (let row of sorted) {
+      if (currentCurrency && currentCurrency !== row.currencycode) {
+        pushSubtotal(currentCurrency);
+        subtotal = Object.fromEntries(Object.keys(subtotal).map(k => [k, 0]));
+      }
+
+      currentCurrency = row.currencycode;
+
+      subtotal.basicsalary += cleanNum(row.basicsalary);
+      subtotal.otherbenefits += cleanNum(row.otherbenefits);
+      subtotal.salaryadvance += cleanNum(row.salaryadvance);
+      subtotal.loandeduction += cleanNum(row.loandeduction);
+      subtotal.socialdeduction += cleanNum(row.socialdeduction);
+      subtotal.helsb += cleanNum(row.helsb);
+      subtotal.advancerecovery += cleanNum(row.advancerecovery);
+      subtotal.otherdeductions += cleanNum(row.otherdeductions);
+      subtotal.nssf += cleanNum(row.nssf);
+      subtotal.paye += cleanNum(row.paye);
+      subtotal.netpay += cleanNum(row.netpay);
+
+      rows.push([
+        row.staffid ?? "",
+        row.staffdName ?? "",
+        row.currencycode ?? "",
+        fmt(row.basicsalary),
+        fmt(row.otherbenefits),
+        fmt(row.salaryadvance),
+        fmt(row.loandeduction),
+        fmt(row.socialdeduction),
+        fmt(row.helsb),
+        fmt(row.advancerecovery),
+        fmt(row.otherdeductions),
+        fmt(row.nssf),
+        fmt(row.paye),
+        fmt(row.netpay)
+      ]);
+    }
+
+    if (currentCurrency) pushSubtotal(currentCurrency);
+
+    // ============================
+    // COLUMN ALIGNMENT
+    // ============================
+    const columnStyles = { 0: { halign: "left" }, 1: { halign: "left" } };
     for (let i = 2; i < columns.length; i++) {
       columnStyles[i] = { halign: "right" };
     }
 
     // ============================
-    // GENERATE TABLE
+    // RENDER TABLE
     // ============================
     doc.autoTable({
       head: [columns],
@@ -102,9 +168,38 @@ export default {
       startY: 45,
       styles: { fontSize: 8 },
       headStyles: { fillColor: darkGreen, textColor: "#ffffff" },
-      margin: { top: 50 },
-      columnStyles: columnStyles
+      columnStyles: columnStyles,
+
+      // >>> Subtotal Styling <<<
+      didParseCell: function (data) {
+        const row = data.row.raw;
+
+        if (!row) return;
+
+        const isSubtotal =
+          row[1] && String(row[1]).includes("Subtotal");
+
+        if (isSubtotal) {
+          data.cell.styles.fontStyle = "bold";
+          data.cell.styles.textColor = darkGreen;
+          data.cell.styles.fillColor = subtotalBg;
+        }
+      }
     });
+
+    // ============================
+    // FOOTER
+    // ============================
+    const footerY = pageHeight - 20;
+
+    const createdBy = appsmith.store.user.username ?? "";
+    const createdAt = new Date().toLocaleString();
+
+    doc.setFont("helvetica", "italic");
+    doc.setFontSize(10);
+
+    doc.text(`created by: ${createdBy}`, 15, footerY);
+    doc.text(`date: ${createdAt}`, 15, footerY + 6);
 
     // ============================
     // RETURN BLOB URL
@@ -114,3 +209,5 @@ export default {
     return blobUrl;
   }
 };
+
+

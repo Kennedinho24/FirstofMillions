@@ -1,0 +1,33 @@
+{
+  "animateLoading": true,
+  "bottomRow": 68,
+  "docUrl": "{{JSObject11.generatePAYEPDF.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "docUrl"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "8arkcyepcl",
+  "leftColumn": 0,
+  "mobileBottomRow": 99,
+  "mobileLeftColumn": 36,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 59,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 20.25,
+  "parentId": "eafcp3j6qb",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 4,
+  "type": "DOCUMENT_VIEWER_WIDGET",
+  "version": 1,
+  "widgetId": "5jyetezaro",
+  "widgetName": "DocumentViewer3"
+}
