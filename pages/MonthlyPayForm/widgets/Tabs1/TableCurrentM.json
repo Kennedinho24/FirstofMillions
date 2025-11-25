@@ -71,7 +71,7 @@
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
-  "defaultSelectedRowIndices": "[\n  0\n]",
+  "defaultSelectedRowIndices": "{{ TableCurrentM.tableData.map((row, index) => index) }}",
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
@@ -169,6 +169,9 @@
     },
     {
       "key": "primaryColumns.createdat.computedValue"
+    },
+    {
+      "key": "defaultSelectedRowIndices"
     }
   ],
   "dynamicPropertyPathList": [

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "bottomRow": 62,
-  "docUrl": "{{ JSObject5.generatePDF.data }}\n\n\n",
+  "docUrl": "{{ JSObject5.generatePDF.data}}\n\n\n",
   "dynamicBindingPathList": [
     {
       "key": "docUrl"

@@ -1,0 +1,8 @@
+ <p>Dear {{ getusers_approver.data[0]?.usernametbl }},</p>
+
+    <p>The attached payroll has been submitted for your final approval.</p>
+
+    <p>Regards,<br>
+    HR Department</p>
+</body>
+</html>

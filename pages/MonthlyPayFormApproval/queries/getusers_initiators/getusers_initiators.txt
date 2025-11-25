@@ -1,0 +1,4 @@
+SELECT usernametbl, useremail
+
+FROM dbuserstbl
+WHERE "UserRoles" = 'Initiator'

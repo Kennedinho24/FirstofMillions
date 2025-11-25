@@ -1,5 +1,5 @@
 SELECT 
-transid, staffid, "staffdName", basicsalary, otherbenefits, salaryadvance, loandeduction , socialdeduction, helsb, advancerecovery, otherdeductions, grosssalary, nssf, paye, paye_flag, nssf_flag, totaldeductions, netpay, payrollperiod, currencycode, wcf, monthunique
+transid, staffid, "staffdName", basicsalary, otherbenefits, salaryadvance, loandeduction , socialdeduction, helsb, advancerecovery, otherdeductions, grosssalary, nssf, paye, paye_flag, nssf_flag, totaldeductions, netpay, payrollperiod, currencycode, wcf, monthunique, createdby, createdat, reviewedby, reviewedat
 FROM public."monthlypayraw"
 WHERE payrollperiod = '{{SelectPM.selectedOptionValue}}'
 AND status = 'Reviewed'

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 35,
+  "bottomRow": 40,
   "boxShadow": "none",
   "buttonColor": "#b91c1c",
   "buttonVariant": "SECONDARY",
@@ -9,6 +9,14 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -17,7 +25,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{TableCurrentM.selectedRows<1}}",
   "isLoading": false,
   "isVisible": true,
   "key": "osydo7k4ye",
@@ -28,9 +36,9 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 31,
   "needsErrorInfo": false,
-  "onClick": "{{JSObject5.returnPayroll();}}",
-  "originalBottomRow": 35,
-  "originalTopRow": 31,
+  "onClick": "{{showModal(Modal1.name);}}",
+  "originalBottomRow": 40,
+  "originalTopRow": 36,
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -41,7 +49,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 58,
   "text": "Return",
-  "topRow": 31,
+  "topRow": 36,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "7gqmmfc1i9",

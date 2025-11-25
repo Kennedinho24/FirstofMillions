@@ -63,9 +63,7 @@
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
-  "defaultSelectedRowIndices": [
-    0
-  ],
+  "defaultSelectedRowIndices": "{{ inputMonthlyPaytbl.tableData.map((row, index) => index) }}",
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
@@ -136,6 +134,9 @@
     },
     {
       "key": "primaryColumns.currencycode.computedValue"
+    },
+    {
+      "key": "defaultSelectedRowIndices"
     }
   ],
   "dynamicPropertyPathList": [

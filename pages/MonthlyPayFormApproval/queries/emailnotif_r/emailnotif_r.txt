@@ -1,0 +1,11 @@
+<p>Dear {{ getusers_initiators.data.map(u => u.usernametbl).join(",") }},</p>
+
+<p>The subject payroll has been returned for correction.</p>
+
+<p>
+  <b><i>{{ RichTextEditor1.text }}</i></b>
+</p>
+
+<p>Regards,<br>
+{{ appsmith.store.user.username }}</p>
+

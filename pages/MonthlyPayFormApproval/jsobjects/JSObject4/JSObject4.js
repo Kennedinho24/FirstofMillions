@@ -4,7 +4,8 @@ export default {
      
       // Now run insert query
       await updatestatus.run();
-			
+			await JSObject6.generatePDF();
+			await emailnotif_a.run();
 			await getcurrentmonth.run();
 
       showAlert(

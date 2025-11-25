@@ -1,5 +1,18 @@
 export default {
+	
+	async toBase64(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+  },
+
   async generatePDF() {
+    // Keep original setup and content structure you provided, only
+    // adding a final step to return Base64 (ready for SMTP).
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF("landscape");
 
@@ -9,14 +22,15 @@ export default {
     const pageHeight = doc.internal.pageSize.getHeight();
 
     // ============================
-    // HEADER + LOGO
+    // HEADER + LOGO (original)
     // ============================
+    const logoURL = "https://i.postimg.cc/G3zQvKn8/AKF-Logo.jpg?dl=1";
+    const base64Logo = await this.toBase64(logoURL);
+
     try {
-      if (Image1 && Image1.image) {
-        doc.addImage(Image1.image, "PNG", 10, 8, 25, 25);
-      }
+      doc.addImage(base64Logo, "JPEG", 10, 5, 22, 25);
     } catch (e) {
-      console.log("Logo error:", e);
+      console.log("Logo load failed:", e);
     }
 
     doc.setTextColor(darkGreen);
@@ -35,7 +49,7 @@ export default {
     doc.setTextColor("#000000");
 
     // ============================
-    // TABLE COLUMNS
+    // TABLE COLUMNS (original)
     // ============================
     const columns = [
       "Staff ID",
@@ -60,13 +74,13 @@ export default {
         : TableCurrentM?.tableData ?? [];
 
     // ============================
-    // NUMBER FORMATTER
+    // NUMBER FORMATTER (original)
     // ============================
     const cleanNum = (v) => Number(String(v ?? 0).replace(/,/g, "")) || 0;
     const fmt = (v) => cleanNum(v).toLocaleString();
 
     // ============================
-    // SORT BY CURRENCY (TZS → USD)
+    // SORT BY CURRENCY (TZS → USD) (original)
     // ============================
     const sorted = [...sourceRows].sort((a, b) => {
       const order = { "TZS": 1, "USD": 2 };
@@ -74,7 +88,7 @@ export default {
     });
 
     // ============================
-    // GROUP + SUBTOTALS
+    // GROUP + SUBTOTALS (original)
     // ============================
     const rows = [];
     let currentCurrency = null;
@@ -151,7 +165,7 @@ export default {
     if (currentCurrency) pushSubtotal(currentCurrency);
 
     // ============================
-    // COLUMN ALIGNMENT
+    // COLUMN ALIGNMENT (original)
     // ============================
     const columnStyles = { 0: { halign: "left" }, 1: { halign: "left" } };
     for (let i = 2; i < columns.length; i++) {
@@ -159,8 +173,9 @@ export default {
     }
 
     // ============================
-    // RENDER TABLE
+    // RENDER TABLE USING autoTable (original)
     // ============================
+    // keep theme & styling similar to your original setup, including didParseCell for subtotal styling
     doc.autoTable({
       head: [columns],
       body: rows,
@@ -184,30 +199,38 @@ export default {
           data.cell.styles.textColor = darkGreen;
           data.cell.styles.fillColor = subtotalBg;
         }
-      }
+      },
+
+      // preserve page-break handling that autoTable gives you
+      margin: { left: 10, right: 10 }
     });
 
     // ============================
-    // FOOTER
+    // FOOTER (original)
     // ============================
     const footerY = pageHeight - 20;
 
-    const createdBy = appsmith.store.user.username ?? "";
+    const createdBy = (appsmith && appsmith.store && appsmith.store.user && appsmith.store.user.username) ? appsmith.store.user.username : "";
     const createdAt = new Date().toLocaleString();
 
     doc.setFont("helvetica", "italic");
     doc.setFontSize(10);
 
     doc.text(`created by: ${createdBy}`, 15, footerY);
-    doc.text(`date: ${createdAt}`, 15, footerY + 6);
+    doc.text(`Date: ${createdAt}`, 15, footerY + 6);
+		
+		doc.setFont("times", "bolditalic");
+    doc.setFontSize(8);
+		doc.setTextColor(0, 100, 0);
+		doc.text(`Payroll powered by DocuTrack ERP ©`, 15, footerY + 15);
+
 
     // ============================
-    // RETURN BLOB URL
+    // FINAL STEP → Return Base64 (for SMTP APIs)
     // ============================
-    const blob = doc.output("blob");
-    const blobUrl = URL.createObjectURL(blob);
-    return blobUrl;
+    // Return only the Base64 payload (no data: prefix) which is what SMTP APIs expect
+    const base64 = doc.output("datauristring");
+    return base64;
   }
 };
-
 

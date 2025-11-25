@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT \ntransid, staffid, \"staffdName\", basicsalary, otherbenefits, salaryadvance, loandeduction , socialdeduction, helsb, advancerecovery, otherdeductions, grosssalary, nssf, paye, paye_flag, nssf_flag, totaldeductions, netpay, payrollperiod, currencycode, wcf, monthunique\nFROM public.\"monthlypayraw\"\nWHERE payrollperiod = '{{SelectPM.selectedOptionValue}}'\nAND status = 'Submitted'",
+      "body": "SELECT \ntransid, staffid, \"staffdName\", basicsalary, otherbenefits, salaryadvance, loandeduction , socialdeduction, helsb, advancerecovery, otherdeductions, grosssalary, nssf, paye, paye_flag, nssf_flag, totaldeductions, netpay, payrollperiod, currencycode, wcf, monthunique, createdby, createdat\nFROM public.\"monthlypayraw\"\nWHERE payrollperiod = '{{SelectPM.selectedOptionValue}}'\nAND status = 'Submitted'",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

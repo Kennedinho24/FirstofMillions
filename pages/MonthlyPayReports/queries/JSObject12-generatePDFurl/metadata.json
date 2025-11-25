@@ -25,7 +25,7 @@
     "fullyQualifiedName": "JSObject12.generatePDFurl",
     "name": "generatePDFurl",
     "pageId": "MonthlyPayReports",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

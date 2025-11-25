@@ -1,0 +1,6 @@
+<p>Dear {{ getusers_initiators.data.map(u => u.usernametbl).join(",") }},</p>
+<p> {{SelectPM.selectedOptionValue}} payroll has been fully approved.</p>
+<p>Regards,<br>
+HR Department</p>
+</body>
+</html>

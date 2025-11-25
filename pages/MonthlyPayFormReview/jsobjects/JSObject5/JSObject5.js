@@ -4,7 +4,7 @@ export default {
      
       // Now run insert query
       await updatestatus2.run();
-			
+			await emailnotif_r.run();
 			await getcurrentmonth.run();
 
       showAlert(

@@ -60,19 +60,20 @@ export default {
       // -----------------------------
       // ADD LOGO
       // -----------------------------
-      doc.addImage(base64Image, "JPEG", 10, 5, 20, 38);
+      doc.addImage(base64Image, "JPEG", 10, 5, 20, 30);
 
       // -----------------------------
       // HEADER TEXT (updated to include SelectPM label)
       // -----------------------------
-      doc.setFontSize(16);
-      doc.text(
-        `Monthly Payroll Report, ${SelectPM?.selectedOptionLabel || ""}`,
-        40,
-        18
-      );
+      doc.setFontSize(14);
+			doc.setTextColor(0, 100, 0);
+      doc.text(`Monthly Payroll Report`, 125, 18);
+			
+			doc.text(
+        `${SelectPM?.selectedOptionLabel}`, 140, 28);
 
       doc.setFontSize(18);
+			doc.setTextColor(0, 100, 0);
       doc.text("AGA KHAN FOUNDATION, TANZANIA", 100, 40);
 
       // -----------------------------
@@ -195,7 +196,7 @@ export default {
         didParseCell: function (data) {
           if (data.row.raw && data.row.raw.isSubtotal) {
             data.cell.styles.fontStyle = "bold";
-            data.cell.styles.fillColor = [220, 220, 220];
+            data.cell.styles.fillColor = [230, 244, 238];
           }
         }
       });
@@ -205,7 +206,10 @@ export default {
       // -----------------------------
       let y = (doc.lastAutoTable && doc.lastAutoTable.finalY ? doc.lastAutoTable.finalY : 50) + 15;
 
-      doc.setFontSize(11);
+      doc.setFont("Pacifico", "italic");
+			doc.setFontSize(10);
+			doc.setTextColor(0, 0, 39);
+			
       doc.text("Created By:", 14, y);
       doc.text(createdBy, 14, y + 6);
       doc.text(createdAt, 14, y + 12);
@@ -217,6 +221,12 @@ export default {
       doc.text("Approved By:", 240, y);
       doc.text(approvedBy, 240, y + 6);
       doc.text(approvedAt, 240, y + 12);
+			
+			doc.setFont("times", "bolditalic");
+			doc.setFontSize(8);
+			doc.setTextColor(0, 100, 0);
+			doc.text(`Payroll powered by DocuTrack ERP ©`, 14, y + 70);
+			doc.text(`It cannot get greener than this! Print Responsibly!!`, 80, y + 70);
 
       // -----------------------------
       // AUTO-DOWNLOAD (reliable anchor + blob method)
