@@ -1,4 +1,16 @@
 export default {
+
+  async toBase64(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+
+    return await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+  },
+
   async generatePDFasURL() {
     try {
       const { jsPDF } = window.jspdf;
@@ -8,17 +20,23 @@ export default {
         return "";
       }
 
-      const doc = new jsPDF("landscape");
-      let rows = TableCurrentM.tableData || [];
+      // -----------------------------
+      // LOAD LOGO
+      // -----------------------------
+      const imageURL = "https://i.postimg.cc/G3zQvKn8/AKF-Logo.jpg?dl=1";
+      const base64Image = await this.toBase64(imageURL);
 
+      const doc = new jsPDF("landscape");
+
+      let rows = TableCurrentM.tableData || [];
       if (!rows.length) {
         showAlert("No data in table!", "warning");
         return "";
       }
 
-      // ----------------------------
-      // SORT BY CURRENCY (TZS first)
-      // ----------------------------
+      // -----------------------------
+      // SORT BY CURRENCY
+      // -----------------------------
       rows = rows.sort((a, b) => {
         const A = a.currencycode || "";
         const B = b.currencycode || "";
@@ -27,7 +45,9 @@ export default {
         return A.localeCompare(B);
       });
 
-      // Footer fields
+      // -----------------------------
+      // FOOTER FIELDS
+      // -----------------------------
       const first = rows[0] || {};
       const createdBy = first.createdby || "";
       const reviewedBy = first.reviewedby || "";
@@ -38,21 +58,30 @@ export default {
       const approvedAt = first.approvedat || "";
 
       // -----------------------------
-      // HEADER
+      // ADD LOGO
       // -----------------------------
-      doc.setFontSize(16);
-      doc.text("Monthly Payroll Report", 14, 15);
+      doc.addImage(base64Image, "JPEG", 10, 5, 20, 38);
 
       // -----------------------------
-      // COLUMNS (WCF REMOVED)
+      // HEADER TEXT (updated to include SelectPM label)
+      // -----------------------------
+      doc.setFontSize(16);
+      doc.text(
+        `Monthly Payroll Report, ${SelectPM?.selectedOptionLabel || ""}`,
+        40,
+        18
+      );
+
+      doc.setFontSize(18);
+      doc.text("AGA KHAN FOUNDATION, TANZANIA", 100, 40);
+
+      // -----------------------------
+      // COLUMNS
       // -----------------------------
       const columns = [
         { header: "Payroll Period", dataKey: "payrollperiod" },
         { header: "Staff Name", dataKey: "staffdName" },
-
-        // NEW COLUMN (currency)
         { header: "Currency", dataKey: "currencycode" },
-
         { header: "Basic", dataKey: "basicsalary" },
         { header: "Benefits", dataKey: "otherbenefits" },
         { header: "Advance", dataKey: "salaryadvance" },
@@ -71,9 +100,9 @@ export default {
       const fmt = (v) =>
         v === null || v === undefined || v === "" ? "" : Number(v).toLocaleString();
 
-      // ---------------------------------------
-      // GROUP ROWS BY CURRENCY + SUBTOTALS
-      // ---------------------------------------
+      // -----------------------------
+      // GROUP ROWS + SUBTOTALS
+      // -----------------------------
       let groupedRows = [];
       let currentCurrency = "";
       let subtotal = null;
@@ -143,7 +172,7 @@ export default {
         });
       });
 
-      // Final subtotal for last currency
+      // FINAL subtotal
       if (currentCurrency !== "") {
         groupedRows.push({
           staffdName: "SUBTOTAL",
@@ -155,71 +184,80 @@ export default {
         });
       }
 
-      // ------------------------------
-      // AUTOTABLE
-      // ------------------------------
+      // -----------------------------
+      // DRAW TABLE
+      // -----------------------------
       doc.autoTable({
-        startY: 25,
-        columns,
+        columns: columns,
         body: groupedRows,
+        startY: 50,
         styles: { fontSize: 8 },
         didParseCell: function (data) {
-          if (data.row.raw.isSubtotal) {
+          if (data.row.raw && data.row.raw.isSubtotal) {
             data.cell.styles.fontStyle = "bold";
-            data.cell.styles.fillColor = [210, 245, 210]; // light green
+            data.cell.styles.fillColor = [220, 220, 220];
           }
-        },
-        columnStyles: {
-          currencycode: { halign: "center" },
-          basicsalary: { halign: "right" },
-          otherbenefits: { halign: "right" },
-          salaryadvance: { halign: "right" },
-          loandeduction: { halign: "right" },
-          socialdeduction: { halign: "right" },
-          helsb: { halign: "right" },
-          advancerecovery: { halign: "right" },
-          otherdeductions: { halign: "right" },
-          nssf: { halign: "right" },
-          paye: { halign: "right" },
-          totaldeductions: { halign: "right" },
-          netpay: { halign: "right" }
         }
       });
 
-      // ------------------------------
+      // -----------------------------
       // FOOTER
-      // ------------------------------
-      const pageHeight = doc.internal.pageSize.height;
-      const footerY = pageHeight - 28;
-      const colWidth = doc.internal.pageSize.width / 3;
+      // -----------------------------
+      let y = (doc.lastAutoTable && doc.lastAutoTable.finalY ? doc.lastAutoTable.finalY : 50) + 15;
 
-      doc.setFontSize(13);
-      doc.setFont(undefined, "italic");
-      doc.text(`created by: ${createdBy}`, 10, footerY);
-      doc.text(`reviewed by: ${reviewedBy}`, colWidth + 10, footerY);
-      doc.text(`approved by: ${approvedBy}`, colWidth * 2 + 10, footerY);
+      doc.setFontSize(11);
+      doc.text("Created By:", 14, y);
+      doc.text(createdBy, 14, y + 6);
+      doc.text(createdAt, 14, y + 12);
 
-      doc.setDrawColor(160, 160, 160);
-      doc.line(10, footerY + 2, colWidth - 15, footerY + 2);
-      doc.line(colWidth + 10, footerY + 2, colWidth * 2 - 15, footerY + 2);
-      doc.line(colWidth * 2 + 10, footerY + 2, colWidth * 3 - 15, footerY + 2);
+      doc.text("Reviewed By:", 120, y);
+      doc.text(reviewedBy, 120, y + 6);
+      doc.text(reviewedAt, 120, y + 12);
 
-      doc.setFontSize(10);
-      doc.setFont(undefined, "normal");
-      doc.text(`created at: ${createdAt}`, 10, footerY + 8);
-      doc.text(`reviewed at: ${reviewedAt}`, colWidth + 10, footerY + 8);
-      doc.text(`approved at: ${approvedAt}`, colWidth * 2 + 10, footerY + 8);
+      doc.text("Approved By:", 240, y);
+      doc.text(approvedBy, 240, y + 6);
+      doc.text(approvedAt, 240, y + 12);
 
-      // FINAL DATA URL
-      const dataUrl = doc.output("datauristring");
-      await download(dataUrl, "Payroll_Report.pdf", "application/pdf");
+      // -----------------------------
+      // AUTO-DOWNLOAD (reliable anchor + blob method)
+      // -----------------------------
+      // Create PDF blob
+      const pdfBlob = doc.output("blob");
+
+      // Create object URL
+      const blobUrl = URL.createObjectURL(pdfBlob);
+
+      // Create hidden anchor and click it
+      const fileName = `Payroll_Report${SelectPM?.selectedOptionLabel ? `_${SelectPM.selectedOptionLabel}` : ""}.pdf`;
+
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = fileName;
+      // Some environments (sandboxed iframe) require the anchor to be added to DOM first:
+      document.body.appendChild(a);
+      a.click();
+
+      // Cleanup
+      setTimeout(() => {
+        URL.revokeObjectURL(blobUrl);
+        try { a.remove(); } catch (e) { /* ignore */ }
+      }, 1000);
+
+      // Return something meaningful for the JSObject caller
+       const dataUrl = doc.output("datauristring");
+      await download(dataUrl, `Payroll_Report_${SelectPM?.selectedOptionLabel || ''}.pdf`, "application/pdf");
+
       return dataUrl;
 
     } catch (e) {
-      showAlert("Error generating PDF: " + e.message, "error");
-      return "";
+      showAlert("PDF generation error: " + e.message, "error");
+      return { status: "error", message: e.message };
     }
   }
 };
+
+
+
+
 
 
