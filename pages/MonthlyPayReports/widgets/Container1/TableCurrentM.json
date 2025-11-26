@@ -282,6 +282,9 @@
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -392,6 +395,9 @@
     },
     {
       "key": "primaryColumns.wcf.cellBackground"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -412,7 +418,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": true,
+  "isVisible": "{{SelectPM.selectedOptionLabel!==\"\"}}",
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
