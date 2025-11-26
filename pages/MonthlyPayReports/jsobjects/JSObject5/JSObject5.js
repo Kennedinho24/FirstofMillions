@@ -1,4 +1,15 @@
 export default {
+	
+	async toBase64(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+  },
+	
   async generatePDFasURL() {
     try {
       const { jsPDF } = window.jspdf;
@@ -54,6 +65,16 @@ export default {
       const lineHeight = 8;
       const labelX = 20;
       const rightMargin = 190;
+			
+			// logo
+			const logoURL = "https://i.postimg.cc/G3zQvKn8/AKF-Logo.jpg?dl=1";
+			const base64Logo = await this.toBase64(logoURL);
+
+    try {
+      doc.addImage(base64Logo, "JPEG", 20, 5, 22, 25);
+    } catch (e) {
+      console.log("Logo load failed:", e);
+    }
 
       // --- Staff Name ---
       doc.setFontSize(12);
@@ -108,7 +129,7 @@ export default {
       doc.setFontSize(10);
       doc.setFont(undefined, "italic");
       doc.setTextColor(100, 100, 100);
-      doc.text("© Aga Khan Foundation Tanzania", pageWidth / 2, pageHeight - 20, { align: "center" });
+      doc.text("© Payroll powered by DocuTrack ERP", pageWidth / 2, pageHeight - 20, { align: "center" });
 
       // --- Return PDF as URL for preview ---
       const dataUrl = doc.output("datauristring");
