@@ -25,7 +25,7 @@
     "fullyQualifiedName": "JSObject4.generatePDFstatutory",
     "name": "generatePDFstatutory",
     "pageId": "MonthlyPayReports",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

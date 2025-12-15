@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 6,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -23,33 +20,33 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "dzy58e9naa",
-  "leftColumn": 0,
+  "key": "fgpgvilcse",
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 8,
-  "mobileLeftColumn": 4,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 38,
+  "mobileTopRow": 15,
   "needsErrorInfo": false,
   "originalBottomRow": 7,
-  "originalTopRow": 0,
+  "originalTopRow": 2,
   "overflow": "NONE",
   "parentColumnSpace": 10.25,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 13,
+  "rightColumn": 40,
   "shouldTruncate": false,
-  "text": "\n{{ \"Hello, \" + appsmith.store.user.username }}\n",
+  "text": "SYSTEM MAINTENANCE ",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 0,
+  "topRow": 2,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "0jpbph8gp8",
-  "widgetName": "Text1Copy"
+  "widgetId": "yfzy19aevk",
+  "widgetName": "Text1"
 }

@@ -9,6 +9,14 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -19,7 +27,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{SelectPM.selectedOptionLabel!==\"\"}}",
   "key": "14cpavdqlw",
   "leftColumn": 46,
   "minWidth": 120,

@@ -36,7 +36,7 @@
       "isVisible": true,
       "label": "Yes",
       "menuItems": {},
-      "onClick": "{{JSObject8.runAll();\ncloseModal(Modal4.name);}}",
+      "onClick": "{{JSObject8.runAll();\ncloseModal(Modal4.name);\nshowModal(PDFProgressModal.name);}}",
       "placement": "CENTER",
       "widgetId": ""
     },

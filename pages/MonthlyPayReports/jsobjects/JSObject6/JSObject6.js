@@ -83,7 +83,7 @@ export default {
 			const base64Logo = await this.toBase64(logoURL);
 
     try {
-      doc.addImage(base64Logo, "JPEG", 20, 5, 22, 25);
+      doc.addImage(base64Logo, "JPEG", 20, 0, 20, 35);
     } catch (e) {
       console.log("Logo load failed:", e);
     }
@@ -100,15 +100,16 @@ export default {
       const left = 20;
       const right = 190;
 
-      doc.text("Staff:", left, y);
-      doc.text(row.staffdName || "", right, y, { align: "right" });
+      doc.text("Staff:", left, y+5);
+      doc.text(row.staffdName || "", right, y+5, { align: "right" });
       y += lh * 2;
 
       doc.text("Basic Salary:", left, y);
       doc.text(formatNumber(row.basicsalary), right, y, { align: "right" });
       y += lh;
 
-      doc.text("Other Benefits:", left, y);
+      doc.setFont(undefined, "normal");
+			doc.text("Other Benefits:", left, y);
       doc.text(formatNumber(row.otherbenefits), right, y, { align: "right" });
       y += lh;
 
@@ -138,6 +139,20 @@ export default {
       doc.setFont(undefined, "bold");
       doc.text("Net Pay:", left, y);
       doc.text(formatNumber(row.netpay), right, y, { align: "right" });
+			
+			
+			// --- ADD SECOND IMAGE BELOW NET PAY ---
+      const secondImgURL = "https://i.postimg.cc/VN1Hq540/Designer.png";
+      const base64SecondImg = await this.toBase64(secondImgURL);
+
+      try {
+        doc.addImage(base64SecondImg, "PNG", 55, y, 90, 40);
+      } catch (e) {
+        console.log("Second image load failed:", e);
+      }
+
+      y += 55;
+
 
       doc.setFontSize(10);
       doc.setFont(undefined, "italic");

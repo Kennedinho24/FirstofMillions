@@ -6,7 +6,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 169,
-  "bottomRowBeforeCollapse": 63,
+  "bottomRowBeforeCollapse": 169,
   "boxShadow": "none",
   "cachedTableData": {},
   "canFreezeColumn": false,
@@ -172,6 +172,9 @@
     },
     {
       "key": "defaultSelectedRowIndices"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -183,6 +186,9 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -197,7 +203,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": true,
+  "isVisible": "{{SelectPM.selectedOptionLabel!==\"\"}}",
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,

@@ -61,6 +61,10 @@
     {
       "id": "MonthlyPayReports",
       "isDefault": false
+    },
+    {
+      "id": "SystemAdmin",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

@@ -4,6 +4,7 @@
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 25,
+  "bottomRowBeforeCollapse": 25,
   "boxShadow": "none",
   "defaultText": "{{ TableCurrentM.selectedRows.length }} Employees\n",
   "dynamicBindingPathList": [
@@ -15,16 +16,24 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
-  "isVisible": true,
+  "isVisible": "{{SelectPM.selectedOptionLabel!==\"\"}}",
   "key": "twurtkt8s0",
   "label": "Staff selected",
   "labelAlignment": "left",
@@ -52,6 +61,7 @@
   "rightColumn": 8,
   "showStepArrows": false,
   "topRow": 18,
+  "topRowBeforeCollapse": 18,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "mymex00bms",

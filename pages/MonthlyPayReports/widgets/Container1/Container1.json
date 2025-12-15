@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 60,
+  "bottomRow": 59,
   "bottomRowBeforeCollapse": 59,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
@@ -93,7 +93,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 36,
   "shouldScrollContents": true,
-  "topRow": 10,
+  "topRow": 9,
   "topRowBeforeCollapse": 9,
   "type": "CONTAINER_WIDGET",
   "version": 1,

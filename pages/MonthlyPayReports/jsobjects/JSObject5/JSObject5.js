@@ -71,16 +71,17 @@ export default {
 			const base64Logo = await this.toBase64(logoURL);
 
     try {
-      doc.addImage(base64Logo, "JPEG", 20, 5, 22, 25);
+      doc.addImage(base64Logo, "JPEG", 20, 0, 20, 35);
     } catch (e) {
       console.log("Logo load failed:", e);
     }
-
+			
+		
       // --- Staff Name ---
       doc.setFontSize(12);
-      doc.setFont(undefined, "normal");
-      doc.text("Staff:", labelX, y);
-      doc.text(selectedRow.staffdName || "", rightMargin, y, { align: "right" });
+      doc.setFont(undefined, "bold");
+      doc.text("Staff:", labelX, y+5);
+      doc.text(selectedRow.staffdName || "", rightMargin+4, y+5, { align: "right" });
       y += lineHeight * 2;
 
       // --- Earnings ---
@@ -125,7 +126,19 @@ export default {
       doc.text(formatNumber(selectedRow.netpay), rightMargin, y, { align: "right" });
       y += lineHeight * 2;
 
-      // --- Footer: Copyright Signature ---
+      // --- ADD SECOND IMAGE BELOW NET PAY ---
+      const secondImgURL = "https://i.postimg.cc/VN1Hq540/Designer.png";
+      const base64SecondImg = await this.toBase64(secondImgURL);
+
+      try {
+        doc.addImage(base64SecondImg, "PNG", 55, y, 90, 40);
+      } catch (e) {
+        console.log("Second image load failed:", e);
+      }
+
+      y += 55;
+
+      // --- Footer ---
       doc.setFontSize(10);
       doc.setFont(undefined, "italic");
       doc.setTextColor(100, 100, 100);
@@ -141,4 +154,3 @@ export default {
     }
   }
 };
-

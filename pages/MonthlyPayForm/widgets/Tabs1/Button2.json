@@ -2,6 +2,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 25,
+  "bottomRowBeforeCollapse": 25,
   "boxShadow": "none",
   "buttonColor": "#1e3a8a",
   "buttonVariant": "PRIMARY",
@@ -9,6 +10,14 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -19,7 +28,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{SelectPM.selectedOptionLabel!==\"\"}}",
   "key": "14cpavdqlw",
   "leftColumn": 56,
   "minWidth": 120,
@@ -42,6 +51,7 @@
   "rightColumn": 64,
   "text": "Submit for review",
   "topRow": 21,
+  "topRowBeforeCollapse": 21,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "eutl15nhg4",
